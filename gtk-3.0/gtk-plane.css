@@ -119,7 +119,35 @@ GtkContainer{background:none}*/
 .toolbar .button.raised.linked,
 .toolbar .raised.linked .button,
 .inline-toolbar.toolbar .button,
-.inline-toolbar.toolbar GtkToolButton .button{
+.inline-toolbar.toolbar GtkToolButton .button,
+.linked .button,
+.linked .button:hover,
+.linked .button:active:hover,
+.linked .button:insensitive,
+.linked .button:active:hover:insensitive,
+.toolbar .button.raised.linked,
+.toolbar .raised.linked .button,
+.inline-toolbar.toolbar .button,
+.inline-toolbar.toolbar GtkToolButton .button,.linked .button:active,
+.toolbar .button.raised.linked:active,
+.toolbar .raised.linked .button:active,
+.inline-toolbar.toolbar .button:active,
+.inline-toolbar.toolbar GtkToolButton .button:active,
+.linked .button:insensitive,
+.toolbar .button.raised.linked:insensitive,
+.toolbar .raised.linked .button:insensitive,
+.inline-toolbar.toolbar .button:insensitive,
+.inline-toolbar.toolbar GtkToolButton .button:insensitive,
+.linked .button:backdrop,
+.toolbar .button.raised.linked:backdrop,
+.toolbar .raised.linked .button:backdrop,
+.inline-toolbar.toolbar .button:backdrop,
+.inline-toolbar.toolbar GtkToolButton .button:backdrop,
+.linked .button:insensitive:backdrop,
+.toolbar .button.raised.linked:insensitive:backdrop,
+.toolbar .raised.linked .button:insensitive:backdrop,
+.inline-toolbar.toolbar .button:insensitive:backdrop,
+.inline-toolbar.toolbar GtkToolButton .button:insensitive:backdrop{
 	background:url("assets/metal.png") center center;
 	background-color:transparent;
  	border:4px solid transparent;
@@ -132,6 +160,18 @@ GtkContainer{background:none}*/
     			inset 1px 0px 0px 0px shade(@fg_color, 0.35);
 }
 
+.linked .button:first-child,
+.linked .button:active:first-child,
+.linked .button:active:hover:first-child,
+.linked .button:insensitive:first-child,
+.linked .button:active:hover:insensitive:first-child,
+.linked .button:focus:first-child,
+.linked .button:active:focus:first-child,
+.toolbar .button.raised.linked:first-child,
+.toolbar .button.raised.linked:active:first-child,
+.toolbar .raised.linked .button:first-child,
+.inline-toolbar.toolbar .button:first-child,
+.inline-toolbar.toolbar GtkToolButton:first-child .button,
 .primary-toolbar .linked .button:first-child,
 .primary-toolbar .linked .button:active:hover:first-child,
 .primary-toolbar .button.raised.linked:first-child,
@@ -149,6 +189,15 @@ GtkContainer{background:none}*/
  	background-clip: padding-box;
  	box-shadow: none;
 }
+
+.linked .button:last-child,
+.linked .button:active:last-child,
+.linked .button:active:hover:last-child,
+.linked .button:active:hover:insensitive:last-child,
+.toolbar .button.raised.linked:last-child,
+.toolbar .raised.linked .button:last-child,
+.inline-toolbar.toolbar .button:last-child,
+.inline-toolbar.toolbar GtkToolButton:last-child .button,
 .primary-toolbar .linked .button:last-child,
 .primary-toolbar .linked .button:active:hover:last-child,
 .primary-toolbar .button.raised.linked:last-child,
@@ -164,6 +213,7 @@ GtkContainer{background:none}*/
  	box-shadow: inset 2px 0px 0px 0px shade(@fg_color, 0.52),
     			inset 1px 0px 0px 0px shade(@fg_color, 0.35);
 }
+.linked .button:active,
 .primary-toolbar .linked .button:active,
 .primary-toolbar .button.raised.linked:active,
 .primary-toolbar .raised.linked .button:active,
@@ -195,6 +245,18 @@ GtkContainer{background:none}*/
  	box-shadow: none;
     
 }
+.linked .button:active,
+.linked .button:active:hover,
+.linked .button:hover:insensitive,
+.linked .button:active:hover:insensitive,
+.linked .button:active:first-child,
+.linked .button:active:hover:first-child,
+.linked .button:hover:insensitive:first-child,
+.linked .button:active:hover:insensitive:first-child,
+.linked .button:active:last-child,
+.linked .button:active:hover:last-child,
+.linked .button:hover:insensitive:last-child,
+.linked .button:active:hover:insensitive:last-child,
 .primary-toolbar .linked .entry:hover:only-child,
 .primary-toolbar .linked .button:hover:only-child,
 .primary-toolbar .linked .button:active:only-child,
@@ -223,8 +285,8 @@ GtkContainer{background:none}*/
     -GtkWidget-focus-line-width: 0;
 
     background-color: @base_color;
-    border-radius: 0;
-    border-width: 0;
+    border:none;
+    padding:0px;
 }
 
 
@@ -311,7 +373,7 @@ GtkComboBox .menuitem *:hover {
 	color: #efefef;
 }
 
-
+ 
 
 /****************************Tabs************************/
 
