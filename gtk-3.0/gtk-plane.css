@@ -283,11 +283,21 @@ GtkContainer{background:none}*/
 .cell {
     -GtkCheckButton-indicator-size: 16;
     -GtkWidget-focus-line-width: 0;
-
-    background-color: @base_color;
+    background:@bg_color;
     border:none;
     padding:0px;
+    box-shadow:none;
 }
+row:hover,
+row:hover:focused{background:mix(@selected_bg_color,@bg_color,0.95); border:none;}
+
+row:selected,
+row:active,
+row:insensitive,
+row:selected:insensitive,
+row:selected:backdrop,
+row:selected:focused,
+row:selected:backdrop{background:mix(@selected_bg_color,#000000,0.35); border:none; }
 
 
 /********
