@@ -299,6 +299,76 @@ row:selected:backdrop,
 row:selected:focused,
 row:selected:backdrop{background:mix(@selected_bg_color,#000000,0.35); border:none; }
 
+/*******************
+ * check and radio *
+ *******************/
+.check,
+.radio,
+.check:insensitive,
+.radio:insensitive{
+    background-color: transparent;
+    border-style: none;
+    margin: 1px 0;
+}
+
+GtkCheckButton:hover,
+GtkCheckButton:active:hover,
+GtkCheckButton:selected,
+GtkCheckButton:selected:focus {
+    background-color: transparent;
+}
+
+.menu .radio * {
+    box-shadow: none;
+}
+
+/*****************
+ * column-header *
+ *****************/
+GtkGrid{background:#DC55BA}
+column-header .button,
+column-header .button:hover,
+column-header .button:active,
+column-header .button:focus,
+column-header .button:hover:focus,
+column-header .button:active:focus,
+column-header .button:active:hover:focus,
+column-header:nth-child(last) .button,
+column-header .button:backdrop,
+column-header .button:hover:backdrop,
+column-header .button:active:backdrop,
+column-header .button:focus:backdrop,
+column-header .button:hover:focus:backdrop,
+column-header .button:active:focus:backdrop,
+column-header .button:active:hover:focus:backdrop,
+column-header:nth-child(last) .button:backdrop{
+	background:none;
+ 	border:none;
+ 	border-image:none;
+ 	border-radius:0px;
+ 	box-shadow: inset -1px 0 alpha(@fg_color, 0.07),
+                inset 0 -1px alpha(@fg_color, 0.07);
+ 	text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+ 	background-clip: padding-box;
+    padding: 5px 6px;
+}
+column-header .button:active,
+column-header .button:focus,
+column-header .button:active:focus,
+column-header .button:active:hover:focus,
+column-header .button:hover:focus,
+column-header .button:focused{
+	background:-gtk-gradient (linear, 0 0, 0 1, color-stop(0.84, transparent), color-stop(0.84, mix(@selected_bg_color,#000000,0.35)), color-stop(1, mix(@selected_bg_color,#000000,0.35)));
+	box-shadow: inset -1px 0 alpha(@fg_color, 0.07),
+                inset 0 -1px alpha(@fg_color, 0.07);
+	padding: 5px 6px;
+}
+column-header .button:hover,
+column-header .button:active:hover,
+column-header .button:focus:hover{
+	background:mix(@selected_bg_color,#000000,0.35); border:none;
+	padding: 5px 6px;
+}
 
 /********
  * menu y listas *
