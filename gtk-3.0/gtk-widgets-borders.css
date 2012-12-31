@@ -194,9 +194,7 @@ GtkSwitch.trough:active {
  ******************/
 GtkComboBox.combobox-entry .entry:first-child,
 GtkComboBox.combobox-entry .button:first-child {
-    border-image-width: 10px 1px 10px 12px;
-    border-radius: 8px 0 0 8px;
-    border-right-width: 0;
+
 }
 
 GtkComboBox.combobox-entry .entry:last-child,
