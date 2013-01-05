@@ -1,6 +1,8 @@
 # [Proyecto Plane Gtk3 Ubuntu theme v0.4](http://wfpaisa.github.com/Plane-Gtk3/) [![Build Status](https://secure.travis-ci.org/twitter/bootstrap.png)](http://wfpaisa.github.com/Plane-Gtk3/)
 
-Plane-Gtk3 es un elegante, theme para Ubuntu,   creado por [Felipe Uribe](http://twitter.com/wfpaisa).
+Plane-Gtk3 es un serio y elegante tema para Ubuntu creado por [Felipe Uribe](http://twitter.com/wfpaisa).
+
+
 
 
 
