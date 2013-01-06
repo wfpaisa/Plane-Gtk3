@@ -1,9 +1,8 @@
-# [Proyecto Plane Gtk3 Ubuntu theme v0.4](http://wfpaisa.github.com/Plane-Gtk3/) [![Build Status](https://secure.travis-ci.org/twitter/bootstrap.png)](http://wfpaisa.github.com/Plane-Gtk3/)
+# [Proyecto Plane Gtk3 Ubuntu theme v0.4](http://wfpaisa.github.com/Plane-Gtk3/)
 
 Plane-Gtk3 es un serio y elegante tema para Ubuntu creado por [Felipe Uribe](http://twitter.com/wfpaisa).
 
-
-
+[Página del proyecto.](http://wfpaisa.github.com/Plane-Gtk3/)
 
 
 ## Inicio rápido  
@@ -75,18 +74,7 @@ Gracias!
 
 
 
-## Copyright and license
+## Copyright Licencia.
 
-Copyright 2012 Twitter, Inc.
+Con excepción de lo señalado, este contenido está bajo licencia [Creative Commons Attribution 2.5](http://creativecommons.org/licenses/by/2.5/)
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this work except in compliance with the License.
-You may obtain a copy of the License in the LICENSE file, or at:
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
