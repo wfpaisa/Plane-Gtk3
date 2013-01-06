@@ -312,11 +312,14 @@ footer li:last-child { margin-right: 0; padding-right: 0; border-right: none; }
 
 /* -- HOME-PAGE
 ------------------------------------------------------------- */
-/* descargar */
+/* Instalar */
 .services aside { color: #999; padding-top: 1em; border-top: 1px solid #DDD;}
 .services aside:after, .services h5:after { content: ""; display: block; height: 1px; width: 1em; background: #DDD; margin: 1em 0; }
-
-
+code{padding:8px; margin:10px 0; background:#E7E7E7; display:block; font-family:monospace; color:#05022E}
+code span {color:#ED1212}
+.services-page article{ background:#F3F3F3; margin:5px; padding:10px;}
+.note{background:#BFD4DD; border-radius:5px; padding:4px 6px; color:#252525; font-size:80%;}
+.services-page .col-full{width:98%;}
 /* Slider */
 	/* Browser Resets */
 .flex-container a:active,.flexslider a:active,.flex-container a:focus,.flexslider a:focus  {outline: none;}

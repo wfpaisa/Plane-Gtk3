@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es"> <!--<![endif]-->
+
+<head>
+	<meta charset="UTF-8">
+	
+	<!-- Remove this line if you use the .htaccess -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta name="viewport" content="width=device-width">
+	
+	<meta name="description" content="Designa Studio, a HTML5 / CSS3 template.">
+	<meta name="author" content="Sylvain Lafitte, Web Designer, sylvainlafitte.com">
+	
+	<title>BLOG POST // Designa Studio</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="shortcut icon" type="image/png" href="favicon.png">
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+
+<body>
+<!-- Prompt IE 7 users to install Chrome Frame -->
+<!--[if lt IE 8]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<div class="container">
+
+	<header id="navtop">
+		<a href="index.html" class="logo fleft">
+			<img src="img/logo.png" alt="Designa Studio">
+		</a>
+		
+		<nav class="fright">
+			<ul>
+				<li><a href="index.html" class="navactive">Inicio</a></li>
+				<!-- <li><a href="about.html">About</a></li> -->
+			</ul>
+			<ul>
+				<li><a href="diseno.html">Diseño</a></li>
+				<li><a href="instalar.html">Instalar</a></li>
+			</ul>
+			<ul>
+				<li><a href="documentacion.html">Documentación	</a></li>
+				<!-- <li><a href="contact.html">Contact</a></li> -->
+			</ul>
+		</nav>
+	</header>
+
+
+	<div class="blogpost-page main grid-wrap">
+
+		<header class="grid col-full">
+			<hr>
+			<p class="fleft">Documentación post</p>
+		</header>
+		
+				
+		<section class="grid col-three-quarters mq2-col-two-thirds mq3-col-full">
+			
+				<article class="post post-single">
+					<h2><a href="#" class="post-title">Experiencias del cómo editar el entorno gráfico de Ubuntu en su versión 12.10</a></h2>
+					<div class="meta">
+						<p>Creado <span class="time">Diciembre 01, 2012</span> por <a href="http://twitter.com/wfpaisa" class="fn">Felipe Uribe</a> .</p>
+					</div>
+					<div class="entry">
+						
+
+<p>Llevo un tiempo tratando de personalizar el entorno de ubuntu, y bueno desde hace unos días vengo revisando donde encontrar los ficheros la documentación es relativamente poco alusiva de qué y dónde encontrar que elemento a editar, otro inconveniente es a la hora de aplicar los cambios, bueno en breve iré explicando uno a uno lo que he aprendido y en lo posible con el tiempo solucionando las dudas.</p>
+<p>aclarando que no es un documento oficial el que pienso redactar ni la forma estricta de como editar el entorno gráfico ha y tambien que puedo estar errado de muchas formas.</p>
+
+<h3>Dia 1 por dónde comienzo?</h3>
+<p>fue mi primera duda y tras esta muchas mas, tales como: qué conocimientos debo de tener para hacerlo?, hay algun editor del entorno gráfico?, donde estan los archivos a editar?, hay alguna guia de como hacerlo?.</p>
+<p>Bueno aca  las respuestas:</p>
+
+<p>Que conocimientos debo de tener para hacerlo?</p>
+<p>Entre lo que investigue el entorno gráfico esta desarrollado en una combinación de: XML, CSS, imagenes: PNG, SVG. es poco el conocimiento específico que se debe de tener, tal vez actitudes de entornos usables, algo de lógica y estética te ayudaran a desarrollar algo bonito y usable.  </p>
+
+<p>hay algun editor del entorno gráfico?</p>
+<p>Lamentablemente para unos no y en hora buena para otros. hasta ahora lo mas parecido en edicion del del entorno grafico es una herramienta para convertir algunos colores básicos: <a href="https://wiki.ubuntu.com/Xubuntu/Roadmap/Specifications/R/ThemeEditor">Theme editor</a>, para el resto de opciones su amigo inseparable será un buen editor de textos, yo utilizo Sublime-text, dejo por aca el <a href="http://www.webupd8.org/2011/03/sublime-text-2-ubuntu-ppa.html">link </a>de donde pueden encontrar más de este fabuloso editor.</p>
+<p>Una herramienta que te puede ser util es esta <a href="https://github.com/valr/awf">Link</a>, en el encontraras para instalar A widget Factory, es una herramienta para previsualizar el template como va quedando, si no tienes ni idea de como instlarlo sigue estos pasos:</p>
+<p>en ubuntu 12.10 "recordar que cada linea es un comando la pegas en la terminal y le das enter"</p>
+<code>sudo add-apt-repository ppa:valere-monseur/quantal</code>
+<code>sudo apt-get update</code>
+<code>sudo apt-get install awf</code>
+
+<p>Para ejecutarlo en la terminal el siguiente comando:  </p>
+<code>sudo awf-gtk3</code>
+<p>o</p>
+<code>sudo awf-gtk2</code>
+
+<p>si quieres ver como va quedando el tema en gtk2</p>
+
+
+<p>donde estan los archivos a editar?</p>
+<p>Hay dos partes donde encontrarás los archivos a editar, en la carpeta: /usr/share/themes/</p>
+<p> y la carpeta: /home/nombre-de-tu-usuario/.themes  siendo esta segunda carpeta la recomendada para crear o editar cualquier Theme.</p>
+
+<p>hay alguna guia de como editar un theme de Ubuntu?</p>
+<p>Actualmente no hay una guia oficial de como hacerlo, me imagino yo que sea por la forma en la que evoluciona el proyecto y actualizan códigos que no hay algo estandar.</p>
+<p>en esta busqueda encontre el manual de referencia <a href="http://developer.gnome.org/gtk3/3.4/GtkCssProvider.html">Link</a> de los widgets, los widgets vienen siendo cada elemento del entorno gráfico tal como un botón, o una lista de selección.</p>
+<p>aunque en breve trataré de de profundizar acerca de como editar a partir de un Theme existente.</p>
+
+<h3>Dia Dos</h3>
+<p>Bueno en el dia de hoy comienzo viendo una url:  <a href="http://developer.gnome.org/gtk3/3.4/index.html">Gnome developer</a> algo me dice que por aquí esta todo lo que necesito saber. un buen indicio en Gnome veo un link: <a href="http://developer.gnome.org/gtk3/3.4/GtkStyleContext.html#GTK-STYLE-PROPERTY-BACKGROUND-COLOR:CAPS">Syle context</a> esta sección esta muy interesante ya con estos recursos me dedicare a diseño de algo, bueno busco algo muy sobrio, un tema muy profesional, hay algo que no me acaba de convencer de Ubuntu y  es su entorno aún es muy casual por decirlo así.. falta de sobriedad bueno esto lo digo a mi concepto, me gusta mucho el minimalismo y las cosas en su lugar por lo que me lleva a pensar en Android.. si android, hace unos meses vi que en la página de developers de android cuentan con su muy documentado diseño <a href="http://developer.android.com/design/index.html">Link</a> alli pueden informarsen de una forma bastante amplia para tener en cuenta sobre entornos y usabilidad, en el área de descargas encontré el Stencil y bueno que mejor partida para diseñar algo.</p>
+<p>Me doy lucha entendiendo la plantilla o "theme" comienzo a hacer pruebs con los primeros diseños, el archivo settings.ini veo los colores en general, utilizando mi paleta de colores comienzo a modificar, algo que me di cuenta es que las variables que comienzan con nbg:"nbg_color:#484848" son colores de fondo y las "nfg_color:#efefef" son colores de texto.</p>
+
+<h3>Dia tres, cuatro, cinco, sies.</h3>
+<p>Fueron dias de poco tiempo para dedicarle al proyecto eh investicado un poco y eh encontrado lo siguiente:</p>
+<p>Hay dos partes donde encontrarás los archivos a editar, en la carpeta: /usr/share/themes/ en esta carpeta necesitarás permisos de root para editar cualquier fichero o directorio, te podría ser útil en una consola (Ctrl + T) teclear:</p>
+<p>sudo nautilus</p>
+<p>Te pedira la clave de root y una vez ingresada abrirá una ventana que sera el gestor de archivos o nautilus desde allí podrás editar cualquier fichero ya que tienes permisos de superusuario.</p>
+<p>Actualmente hay varios diseños en la versión de Ubuntu 12.10. me enfocare en el Theme Ambiance que es el diseño por defecto en esta versión de ubuntu. recomiendo hacer una copia de esta carpeta y nombrarla con cualquier otro nombre, en mi caso: "plane"</p>
+
+<p>Manos a la obra.</p>
+<h3>El Primer Mes</h3>
+<p>El primer mes me consumió el tiempo las investiga entre este proyecto y otros que en el momento me generan ganacias mi trabajo y bueno otros deberes por fin logre tener un Diseño modesto para comenzar, recordando de tantos y tantos diseños que recuerde y utilizando como base algo ya construido decidí optar por arrancar desde el diseño base de android en su versión 4X, es un buen punto de partida ya que en se encuentran mucho de las bases a tener en cuenta en cualquier diseño y bueno como es libre, lo siguiente a hacer fue buscar todas estas piezas que hacen falta, piezas que en Ubuntu se llaman widgets, tales como Botones, frames...</p>
+<p>Bueno aqui presento el resultado:</p>
+<p><img src="img/image01.jpg" alt="" width="610" height="541" /></p>
+
+
+
+
+<h3>Segundo Mes</h3>
+<p>31 Dia: El segundo mes inicio ya buscando codigo y remplazando por mis diseños, el primer paso es ejecutar el explorador de archivos como root y asi me dirijo al directorio: /usr/share/themes/ , alli copio el tema Ambiance dandole el nombre: plane, ahora cambio el nombre del tema que esta en el contenido de: "index.theme" remplazo las partes donde dice "Ambiance" por "plane" sigo con darle permisos al directorio para trabajar comodamente, bueno ahora si manos a la obra y arranco con modificar  los bordes de las ventanas, es algo laborioso ya que hay que remplazar las imagenes de la carpeta: /usr/share/themes/plane/metacity-1/ y luego a la carpeta "/usr/share/themes/plane/unity" , y por ultimo edito el archivo "/usr/share/themes/plane/metacity-1/metacity-theme-1.xml&rsquo;  para ir viendo los cambios recomiendo utilizar el programa "herramienta de retoques"</p>
+<p><img src="img/image03.png" alt="" width="528" height="466" /></p>
+
+
+<p>32 Dia: Este dia comienzo a modificar estilo por estilo del archivo "usr/share/themes/plane/gtk-3.0/settings.ini"  y a revisar donde se ve reflejado el cambio, para ello en una terminar abro nautilus y lo cierro con "sudo killall nautilus" asi borra la cache y se pueden ver los cambios. comienzo editando, aca les dejo unos comentarios de lo que hace cada variable:  </p>
+<code>
+<p>base_color:#ffffff  // color base del sistema si el tema es claro aconsejo dejarlo en blanco y si es oscuro del background</p>
+<p>nbg_color:#f2f1f0  // background del sistema</p>
+<p>ntooltip_bg_color:#000000 // tooltips "consejos" del sistema</p>
+<p>nselected_bg_color:#f07746 // objetos seleccionados</p>
+<p>ntext_color:#3C3C3C // color del texto de cajas de texto</p>
+<p>nfg_color:#4c4c4c // texto en general del sitio.</p>
+<p>ntooltip_fg_color:#ffffff //texto de los tooltips "consejos"</p>
+<p>nselected_fg_color:#ffffff //texto de los objetos seleccionados</p>
+<p>nlink_color:#DD4814  // color de los objetos resaltados</p>
+<p>nbg_color_dark:#3c3b37 //color del los backgrounds del sistema cuando se pide en oscuro</p>
+<p>nfg_color_dark:#dfdbd2  //color del los textos del sistema cuando se pide en oscuro</p>
+</code>
+
+<p>ya con esto se me iso mas facil editar el "usr/share/themes/plane/gtk-2.0/gtkrc" en las primeras lineas.</p>
+
+<p>Pensando en las sostenibilidad del codigo y en ser lo maximo compatible con futuras actualizaciones en los templates decide eredar estilos, esto que significa, que no modificare directamente los estilos sino que creare un nuevo archivo lo ingreso al final del archivo "" asi podre actualizar futuros archivos y mi archivo de edición no se vera afectado.<img src="img/image02.png" alt="" width="689" height="650" /></p>
+
+<p>Como en mi diseño no deje un color de background  plano, como pueden ver tiene una sombra interna:</p>
+<p><img src="img/image00.png" alt="" width="354" height="247" /></p>
+
+<p>para ello eliminó todos los background y me voy por toda el <a href="http://developer.gnome.org/gtk/stable/GtkWindow.html#GtkWindow.object-hierarchy">"Object Hierarchy"</a> </p>
+<p>en el puedo ver desde donde se dibujan los elementos y editó el primer objeto que me controla las ventanas"GtkWidget", dandole el color de fondo y las sobras internas.</p>
+					</div>
+					
+				</article>
+					
+
+			
+		
+		</section>
+
+		<aside class="grid col-one-quarter mq2-col-one-third mq3-col-full blog-sidebar">
+				
+			
+			<div class="widget">
+			<!-- AddThis Button BEGIN -->
+				
+			<div class="addthis_toolbox addthis_floating_style addthis_counter_style" style="left:50px;top:50px;">
+			<a class="addthis_button_facebook_like" fb:like:layout="box_count"></a>
+			<a class="addthis_button_tweet" tw:count="vertical"></a>
+			<a class="addthis_button_google_plusone" g:plusone:size="tall"></a>
+			<a class="addthis_counter"></a>
+			</div>
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50e99d552a1328e8"></script>
+			<!-- AddThis Button END -->
+			</div>
+			
+			<div class="widget">
+			<h3>Links útiles</h3>
+			<ul>
+				<li><a href="http://developer.ubuntu.com/get-started/" title="">Inicio como desarrollador en Ubuntu</a></li>
+				<li><a href="https://wiki.ubuntu.com/Artwork/Documentation" title="">Directrises Ubuntu</a></li>	
+				<li><a href="https://wiki.ubuntu.com/Artwork/Documentation/GtkCssEngine" title="">Documentación gtk CSS Engine</a></li>		
+				<li><a href="https://live.gnome.org/GnomeArt/Tutorials" title="">Algunos tutoriales</a></li>		
+			</ul>
+			</div>
+			
+
+		
+
+		</aside>
+	
+		
+	</div> <!--main-->
+
+<div class="divide-top">
+	<footer class="grid-wrap">
+		<ul class="grid col-one-third social">
+			<!-- <li><a href="#">RSS</a></li> -->
+			<!-- <li><a href="#">Facebook</a></li> -->
+			<li><a href="https://twitter.com/search/realtime?q=%23PlaneGtk3&src=hash">Hashtag Planegtk3 Twitter</a></li>
+			<!-- <li><a href="#">Google+</a></li> -->
+			<!-- <li><a href="#">Flickr</a></li> -->
+		</ul>
+	
+		<div class="up grid col-one-third ">
+			<a href="#navtop" title="Go back up">&uarr;</a>
+		</div>
+		
+		<nav class="grid col-one-third ">
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<!-- <li><a href="about.html">About</a></li> -->
+				<li><a href="diseno.html">Diseño</a></li>
+				<li><a href="instalar.html">Instalar</a></li>
+				<li><a href="documentacion.html">Documentación</a></li>
+				<!-- <li><a href="contact.html">Contact</a></li> -->
+			</ul>
+		</nav>
+	</footer>
+</div>
+
+</div>
+
+<!-- Javascript - jQuery -->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+
+<!--[if (gte IE 6)&(lte IE 8)]>
+<script src="js/selectivizr.js"></script>
+<![endif]-->
+
+<script src="js/scripts.js"></script>
+
+<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID. -->
+<script>
+  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+</body>
+</html>

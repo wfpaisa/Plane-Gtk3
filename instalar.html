@@ -17,7 +17,7 @@
 	<meta name="description" content="Designa Studio, a HTML5 / CSS3 template.">
 	<meta name="author" content="Sylvain Lafitte, Web Designer, sylvainlafitte.com">
 	
-	<title>DiseÑo // Plane-Gtk3</title>
+	<title>Instalar // Plane-Gtk3</title>
 	
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<link rel="shortcut icon" type="image/png" href="favicon.png">
@@ -29,6 +29,7 @@
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
+
 
 
 <body>
@@ -59,49 +60,86 @@
 	</header>
 
 
-	<div class="work-page main grid-wrap">
+	<div class="services-page main grid-wrap">
 
 		<header class="grid col-full">
 			<hr>
-			<p class="fleft">Diseño</p>
+			<p class="fleft">Instalar</p>
 		</header>
 
 
-		<aside class="grid col-one-quarter mq2-col-one-third mq3-col-full">
-
-		<p class="mbottom">Plane diseño gtk3 se basa en un diseño limpio, serio y elegante para todos aquellos amantes de los entornos graficos minimalistas.
-		<br>
-			<a class="arrow fright" target="_blanck" href="img/Ubuntu_Design_Plane_Widgets-6.jpg">Ampliación del Diseño</a>
-		</p>
+		<aside class="grid col-one-quarter mq2-col-full">
+			<p class="mbottom">Acontinuación describire los pasos para integrar la plantilla al sistema, espero en algun momento crear un paquete de instalación.
+			</p>
+			<div class="menu">
+				<ul>					
+					<li><a href="#navtipografia" class="arrow">Tipografia</a></li>
+					<li><a href="#navtheme" class="arrow">Theme Plane-Gtk3</a></li>
+					<li><a href="#navherramientas" class="arrow">Herramienta de retoques</a></li>
+				</ul>
+			</div>
+		</aside>
 		
+		<section class="grid col-three-quarters mq2-col-full">
 		
-	</aside>
-	
-		<section class="grid col-three-quarters mq2-col-two-thirds mq3-col-full">
-	
-		<figure class="">
-			<a href="#" >
-			<img src="img/d1.jpg" alt="" >
-			</a>
-<!-- 			<figcaption>
-				<p>Lorem ipsum dolor set amet</p>
-			</figcaption> -->
-		</figure>
+			
+			
+			<div class="grid-wrap">
+			
+			<article id="navtipografia" class="grid col-full">
+				<h2>1. Tipografia</h2>
+			<ul>
+				<li>* Descargamos la tipografia: <a href="descargas/felipe.zip">Felipe fonts family</a></li>
+				<li>
+					* Descomprimimos las fuentes descargadas en la carpeta:
+					<br>
+				 <code>
+				 	/home/<span>usuario</span>/.local/share/fonts/
+				 </code>
+				 <div class="note">
+				 	Nota: usuario lo remplazamos por el nombre de el usuario de tu sessión., recuerda que el directorio ".local" es oculto por si no lo encuentras debes habilitar: -mostar archivos ocultos- desde el menu -ver-.
+				 </div>
+				</li>
+			</ul>
+			</article>
 		
-		<figure class="">
-			<a href="#" >
-			<img src="img/d2.jpg" alt="" >
-			</a>
-		</figure>
-		<figure class="">
-			<a href="#" >
-			<img src="img/d3.jpg" alt="" >
-			</a>
-		</figure>
-		<p>You may use these materials without restriction in your apps and to develop your apps.You may use these materials without restriction in your apps and to develop your apps. <br>
-		Portions of this page are modifications based on work created and shared by the Android Open Source Project and used according to terms described in the Creative Commons 2.5 Attribution License.
-		  </p>
-	
+			<article id="navtheme" class="grid col-full">
+				<h2>2. Theme</h2>
+			<ul>
+				<li>* Descargamos el theme: <a href="https://github.com/wfpaisa/Plane-Gtk3/zipball/master">Plane-Gtk3</a></li>
+				<li>
+					* Descomprimimos el theme en:
+					<br>
+				 <code>
+				 	/home/<span>usuario</span>/.themes/
+				 </code>
+				 <div class="note">
+				 	Nota: usuario lo remplazamos por el nombre de el usuario de tu sessión., recuerda que el directorio ".themes" es oculto por si no lo encuentras debes habilitar: -mostar archivos ocultos- desde el menu -ver-. si el directorio .themes no esta creado puedes crearlo
+				 </div>
+				</li>
+			</ul>
+			</article>
+			
+			<article id="navherramientas" class="grid col-full">
+				<h2>3. Aplicar el theme al entorno gráfico</h2>
+				<p>
+					Si tienes instalada la herramienta Gnome Tweak Tool salta al paso 3.2.<br>
+					<strong>3.1</strong> Instala la herramienta en una terminal de comandos:
+					<code>sudo apt-get install gnome-tweak-tool</code>
+					<strong>3.2</strong> En mis aplicaciones abrir -Gnome Tweak Tool- "Herramienta de retoques" <br>
+					<strong>3.3</strong> Remplazar el Tema "Ambiance" por "Plane":
+					<img src="img/tuto1.png" alt="imagentutorial">
+						<br>
+					<strong>3.4</strong> Remplazar la tipografia actual por "Felipe":
+						<br>
+					<img src="img/tuto2.png" alt="imagentutorial">
+				</p>
+				
+				
+			</article>
+			
+			</div> <!-- 100%articles-->
+		
 		</section>	
 		
 		
