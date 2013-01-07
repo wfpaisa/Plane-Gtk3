@@ -19,17 +19,17 @@ nfg_color_dark:#dfdbd2  //color del los textos del sistema cuando se pide en osc
 
 
 */
-
-/*color de las ventanas y sombras internas de las ventanas*/
 *:insensitive{color:alpha(@fg_color, 0.5); text-shadow: 0 1px alpha (shade (@bg_color, 1.25), 0.1);}
 
+/*color de las ventanas y sombras internas de las ventanas*/
 GtkWidget{background:@base_color; box-shadow: inset 0px 0px 48px 48px rgba(44, 44, 44, 0.28);}
 GtkWidget:backdrop{background:mix (@bg_color, #FFFFFF, 0.13);}
-GtkWidget *{background:none;box-shadow:none;}
-GtkWidget:backdrop *{background:none; box-shadow:none;}
+GtkWidget *,    
+GtkWidget *:backdrop,
+GtkWidget *:insensitive{background:none; box-shadow:none;}
 
 /*Fondos negros, modificar esta propiedad
-GtkContainer{background:none}*/
+GtkContainer{background:@bg_color;}*/
 
 
 
@@ -363,8 +363,7 @@ column-header .button:focus:hover{
 .primary-toolbar .entry:focus,
 .primary-toolbar .entry.progressbar,
 .primary-toolbar .entry.progressbar,
-.entry.progressbar,
-GtkComboBox.combobox-entry .button{
+.entry.progressbar{
     -GtkWidget-focus-line-width: 0;
     background:none;
     box-shadow:none;
@@ -377,26 +376,26 @@ GtkComboBox.combobox-entry .button{
 .entry .button{background:none; border:none;}
 .entry .button .image{background:#DD1AA8; border:4px solid #E32D2D}
 
-.entry:backdrop,
-GtkComboBox.combobox-entry .button:backdrop{
+.entry:backdrop{
     background-image:none;
     color: @backdrop_text_color;
 }
-
-
-.entry:focused,
 .entry:selected,
 .entry:selected:focus,
-.entry:selected:focused,
+.entry:selected:focused{
+	 background-color:@selected_bg_color;
+	 color: @selected_fg_color;
+}
+
+.entry:focused,
+.entry:active,
 .primary-toolbar .entry:focus{
     background-color:none;
 	border-width:2px;
 	border-image: url("assets/entry-focus.svg") 0 1 1 1 / 0 1 1 1 stretch;
-    color: @selected_fg_color;
 }
 
 
-GtkComboBox.combobox-entry .button:insensitive,
 .entry:insensitive{
     background-color: none;
     background-image: none;
@@ -404,7 +403,6 @@ GtkComboBox.combobox-entry .button:insensitive,
     color: mix (@text_color, @base_color, 0.4);
 }
 
-GtkComboBox.combobox-entry .button:insensitive:backdrop,
 .entry:insensitive:backdrop {
     background-color:none;
     border-image: url("assets/entry-insensitive.svg") 0 1 1 1 / 0 1 1 1 stretch;
@@ -420,12 +418,159 @@ GtkComboBox.combobox-entry .button:insensitive:backdrop,
 }
 
 
+/*****************
+ * combobox *
+ *****************/
+/*arrow button*/
+GtkComboBox.combobox-entry .button *{-unico-arrow-texture: url("assets/combobox-arrow.svg");}
+GtkComboBox.combobox-entry .button *:insensitive{-unico-arrow-texture: url("assets/combobox-arrow-disabled.svg");}
+GtkComboBox .button *{-unico-arrow-texture:url("assets/transparent.png");}
+
+/*combobox button*/
+GtkComboBox .button,
+GtkComboBox .button:backdrop,
+GtkComboBox .button:insensitive,
+GtkComboBox .button:hover,
+GtkComboBox .button:active,
+GtkComboBox .button:focus,
+GtkComboBox .button:hover:focus{
+    background:none;
+    border-width: 1px;
+    border-image: url('assets/combobox.svg') 0 10 10 0 / 0px 10px 10px 0px stretch;
+}
+GtkComboBox .button:hover{
+    background:mix(@selected_bg_color,@bg_color,0.65);
+}
+GtkComboBox .button:active,
+GtkComboBox .button:focus{
+     border-image: url('assets/combobox-active.svg') 0 10 10 0 / 0px 10px 10px 0px stretch;
+}
+GtkComboBox .button:insensitive{
+    border-image: url('assets/combobox-insensitive.svg') 0 10 10 0 / 0px 10px 10px 0px stretch;
+}
+
+GtkComboBox .separator {
+    -GtkWidget-wide-separators: true;
+    -GtkWidget-separator-width: 0;
+    -GtkWidget-separator-height: 0;
+    -GtkWidget-horizontal-separator: 0;
+    -GtkWidget-vertical-separator: 0;
+}
+
+
+/*combobox entry*/
+GtkComboBox.combobox-entry .entry,
+GtkComboBox.combobox-entry .entry:last-child{
+    background:none;
+    border-width:0px 0px 1px 1px;
+    border-image: url("assets/entry.svg") 0 0 1 1 / 0 0 1 1 stretch;
+}
+GtkComboBox.combobox-entry .entry:insensitive{
+	border-image: url("assets/entry-insensitive.svg") 0 0 1 1 / 0 0 1 1 stretch;
+}
+	
+GtkComboBox.combobox-entry .entry:focus,
+GtkComboBox.combobox-entry:active .entry{
+	border-width:0px 0px 2px 2px;
+    border-image: url("assets/entry-focus.svg") 0 0 1 1 / 0 0 1 1 stretch;
+}
+
+GtkComboBox.combobox-entry .button,
+GtkComboBox.combobox-entry .button:backdrop,
+GtkComboBox.combobox-entry .button:last-child{
+	background:none;
+    border-width:0px 1px 1px 0px;
+    border-image: url("assets/entry.svg") 0 1 1 0 / 0 1 1 0 stretch;
+}
+
+GtkComboBox.combobox-entry .button:insensitive,
+GtkComboBox.combobox-entry .button:insensitive:backdrop{
+	background:none;
+    border-width:0px 1px 1px 0px;
+    border-image: url("assets/entry-insensitive.svg") 0 1 1 0 / 0 1 1 0 stretch;
+}
+
+GtkComboBox.combobox-entry .button:active{
+	background:mix(@selected_bg_color,#000000,0.35);
+	border-width:0px 1px 1px 0px;
+    border-image: url("assets/entry.svg") 0 1 1 0 / 0 1 1 0 stretch;
+    border-radius:0px;
+    padding:4px 6px;
+}
+
+/*********
+ * frame *
+ *********/
+
+.frame,
+.frame:backdrop{
+    border-radius:0px;
+    border-width: 1px 1px 0px 1px;
+    border-style: solid;
+    border-color: alpha(@fg_color, 0.1);
+    border-image: url("assets/frame.svg") 1 1 0 1 / 1px 1px 0px 1px stretch;
+}
+
+.frame GtkLabel{
+    /*background:alpha(@fg_color, 0.1);*/
+    color:@fg_color;
+    text-shadow:0px 0px 1px @bg_color;
+    padding:1px 4px;
+}
+
+/************
+ * iconview *
+ ************/
+GtkIconView.view.cell:selected,
+GtkIconView.view.cell:selected:focused {
+    background:mix(@selected_bg_color,#000000,0.35); border:none;
+    border:none;
+    box-shadow:none;
+}
+
+/***********
+ * infobar *
+ ***********/
+.info {
+    background:@info_bg_color;
+    border:none;
+    color: @info_fg_color;
+    box-shadow:none;
+}
+.warning {
+    background:@warning_bg_color;
+    border:none;
+    color: @warning_fg_color;
+    box-shadow:none;
+}
+.question {
+    background:@question_bg_color;
+    border:none;
+    color: @question_fg_color;
+    box-shadow:none;
+}
+
+.error {
+    background:@error_bg_color;
+    border:none;
+    color:@error_fg_color;
+    box-shadow:none;
+}
+
+/*********
+ * label *
+ *********/
+GtkLabel,
+GtkLabel:insensitive {
+    background-color: transparent;
+}
+
+
 /********
  * menu y listas *
  ********/
 .menubar{background:none; padding:0px;}
 
-;
 *.menu,
 .toolbar .primary-toolbar .menu,
 GtkMenuToolButton.menu,
@@ -535,12 +680,6 @@ GtkComboBox .menuitem *:hover {
 
 
 
-/*********
- * cajas de texto *
- *********/
-
-
-
 /**************
 Reproductor
 
@@ -596,7 +735,7 @@ Reproductor
  	box-shadow: none;
 }
 
-
+                 
 /*Unity*/
 .unity-panel{
 	background-image:#bg_color;
@@ -617,8 +756,8 @@ NautilusWindow GtkContainer{background:@base_color; box-shadow: inset 0px 0px 48
 NautilusWindow *{	background-color: #484848; 
 	box-shadow: inset 0px 0px 48px 48px rgba(44, 44, 44, 0.28);}
 */
-.nautilus-desktop.nautilus-canvas-item {
-    color: @fg_color;
+.nautilus-desktop.nautilus-canvas-item 
+{    color: @fg_color;
     text-shadow: 0px 0px 1px @bg_color;
 }
 
@@ -628,3 +767,4 @@ maso debe ser asi
 GcalctoolWindow .entry,
 GcalctoolWindow .entry:focus{background:@bg_color;}
 */
+GtkViewport.frame{padding:5px;}
