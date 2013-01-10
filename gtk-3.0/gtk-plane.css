@@ -276,6 +276,28 @@ GtkContainer{background:@bg_color;}*/
 	background-color:mix(@selected_bg_color,#000000,0.6);
 }
 
+/*******************
+ * check and radio *
+ *******************/
+.check,
+.radio,
+.check:insensitive,
+.radio:insensitive {
+    background-color: transparent;
+    border-style: none;
+    margin: 1px 0;
+}
+
+GtkCheckButton:hover,
+GtkCheckButton:active:hover,
+GtkCheckButton:selected,
+GtkCheckButton:selected:focus {
+    background-color: transparent;
+}
+
+.menu .radio * {
+    box-shadow: none;
+}
 
 /****************
  * cell and row *
@@ -648,7 +670,18 @@ GtkComboBox .menuitem *:hover {
 	color: #efefef;
 }
 
- 
+.menuitem GtkCalendar,
+.menuitem GtkCalendar.button,
+.menuitem GtkCalendar.header,
+.menuitem GtkCalendar.view {
+    background-color:none;
+    color: @fg_color;
+}
+
+.menuitem GtkCalendar {
+    background-color:none;
+    background-image: none;
+}
 
 /****************************Tabs************************/
 
@@ -678,7 +711,125 @@ GtkComboBox .menuitem *:hover {
 
 
 
+/*********************
+ * GtkScale's slider *
+ *********************/
+GtkScale,
+GtkProgressBar{
+    -GtkRange-slider-width: 28;
+    -GtkRange-trough-border: 0;
+    -GtkScale-slider-length: 28;
+    -GtkWidget-focus-line-width: 0;
+    
+}
+.scale.slider,
+.scale.slider.horizontal,
+.scale.slider:hover,
+.scale.slider:focus,
+.scale.slider:focus:hover,
+.scale.slider:focused,
+.scale.slider:backdrop{
+    background:url("assets/scale-slider.png");
+    border:none;
+    border-radius:0px;
+    box-shadow:none;
+    padding:0px;
 
+}
+.scale.slider:focus,
+.scale.slider:focused{
+    background:url("assets/scale-slider-focus.png");
+}
+.scale.slider:hover,
+.scale.slider:focus:hover{
+     background:url("assets/scale-slider-hover.png");
+}
+.scale.slider:backdrop,
+.scale.slider.horizontal:backdrop,
+.scale.slider:insensitive,
+.scale.slider.horizontal:insensitive{
+    background:url("assets/scale-slider-disable.png");
+}
+
+.scale.trough,
+.scale.trough:backdrop,
+.scale.trough:insensitive,
+.primary-toolbar GtkScale.trough,
+.primary-toolbar GtkScale.trough:backdrop,
+.menuitem GtkScale.trough{
+    background-clip: content-box;
+    background:none;
+    border:none;
+    padding:0px;
+    box-shadow:none;
+    border-radius:0px;
+    margin:12px 0px 11px 0px;
+    border-width:2px 8px 3px 0;
+    border-image: url("assets/scale-trough.png") 2 8 3 0 / 2px 8px 3px 0px stretch;
+}
+
+.scale.trough.highlight.left,
+.scale.trough.highlight.left:backdrop,
+.scale.trough.highlight.left:insensitive{
+    background:none;
+    border:none;
+    padding:0px;
+    box-shadow:none;
+    border-radius:0px;
+    border-width:2px 0px 3px 8px;
+    border-image: url("assets/scale-trough-highlight-left.png") 2 0 3 8 / 2px 0px 3px 8px stretch;
+}
+.scale.trough.highlight.left:insensitive{
+ border-image: url("assets/scale-trough-disable.png") 2 0 3 8 / 2px 0px 3px 8px stretch;   
+}
+
+GtkScale.vertical {
+    -GtkScale-slider-length: 28;
+}
+.scale.trough.vertical,
+.scale.trough.vertical:backdrop,
+.scale.trough.vertical:insensitive{
+    background-clip: content-box;
+    background:none;
+    border:none;
+    padding:0px;
+    box-shadow:none;
+    border-radius:0px;
+    margin:0px 12px 0px 11px;
+    border-width:9px 2px 0px 3;
+    border-image: url("assets/scale-trough-v.png") 9 2 0 3 / 9px 2px 0px 3px stretch;
+}
+
+.scale.trough.highlight.bottom.vertical,
+.scale.trough.highlight.bottom.vertical:backdrop,
+.scale.trough.highlight.bottom.vertical:insensitive{
+    background:none;
+    border:none;
+    padding:0px;
+    box-shadow:none;
+    border-radius:0px;
+    border-width:0px 2px 9px 3px;
+    border-image: url("assets/scale-trough-highlight-left-v.png") 0 2 9 3 / 0px 2px 9px 3px stretch;
+}
+.scale.trough.highlight.bottom.vertical:insensitive{
+ border-image: url("assets/scale-trough-disable-v.png") 0 2 9 3 / 0px 2px 9px 3px stretch;   
+}
+
+
+/*menu*/
+.menubar .menuitem .scale.highlight.left,
+.scale.highlight.left,
+.progressbar,
+.progressbar row,
+.progressbar row:hover,
+.progressbar row:selected,
+.progressbar row:selected:focused {
+    border-radius:0px;
+    border-width:2px 7px 3px 0;
+    background-image: none;
+    background-color:inherit;
+    border-style:inherit;
+}
 
 /**************
 Reproductor
@@ -734,7 +885,10 @@ Reproductor
  	background-clip: padding-box;
  	box-shadow: none;
 }
-
+/* inline-toolbar */
+.inline-toolbar.toolbar {
+    background:alpha(@fg_color, 0.1);
+}
                  
 /*Unity*/
 .unity-panel{

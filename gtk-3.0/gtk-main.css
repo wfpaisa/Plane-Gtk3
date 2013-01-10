@@ -10,7 +10,7 @@
 
 /* misc colors used by gtk+ */
 @define-color info_fg_color #EFEFEF;
-@define-color info_bg_color #404040;
+@define-color info_bg_color #33b5e5;
 @define-color warning_fg_color #EFEFEF;
 @define-color warning_bg_color #ff8800;
 @define-color question_fg_color #EFEFEF;
