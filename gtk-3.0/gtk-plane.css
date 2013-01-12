@@ -19,19 +19,28 @@ nfg_color_dark:#dfdbd2  //color del los textos del sistema cuando se pide en osc
 
 
 */
-*:insensitive{color:alpha(@fg_color, 0.5); text-shadow: 0 1px alpha (shade (@bg_color, 1.25), 0.1);}
+
 
 /*color de las ventanas y sombras internas de las ventanas*/
 GtkWidget{background:@base_color; box-shadow: inset 0px 0px 48px 48px rgba(44, 44, 44, 0.28);}
 GtkWidget:backdrop{background:mix (@bg_color, #FFFFFF, 0.13);}
 GtkWidget *,    
 GtkWidget *:backdrop,
-GtkWidget *:insensitive{background:none; box-shadow:none;}
+GtkWidget *:insensitive{background:@transparent; box-shadow:none;}
+*:insensitive{color:alpha(@fg_color, 0.5); text-shadow: 0 1px alpha (shade (@bg_color, 1.25), 0.1);}
 
-/*Fondos negros, modificar esta propiedad
-GtkContainer{background:@bg_color;}*/
+/*
+Fondos negros, descomentar:
+background blacks uncomment:
 
+*/
+GtkContainer,
+.background,
+*{background:#404040; box-shadow:none;}
 
+GtkContainer:backdrop,
+.background:backdrop,
+*:backdrop{background:#515151; box-shadow:none;}
 
 
 /*****************Botones****************/
@@ -39,22 +48,22 @@ GtkContainer{background:@bg_color;}*/
 .button:focus,
 .button:hover,
 .button:hover:focus{ 
-	background:url("assets/metal.png") center center;
- 	border:4px solid transparent;
- 	border-image: url("assets/button.png") 6 4 4 4 / 6px 4px 4px 4px stretch;
- 	border-radius:0px;
- 	box-shadow:none;
- 	text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
- 	background-clip: padding-box;
+    background:url("assets/metal.png") center center;
+    border:4px solid transparent;
+    border-image: url("assets/button.png") 6 4 4 4 / 6px 4px 4px 4px stretch;
+    border-radius:0px;
+    box-shadow:none;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    background-clip: padding-box;
  }
  .button:backdrop,
  .button:hover:backdrop,
  .button:insensitive,
  .button:insensitive:backdrop{
- 	background:url("assets/metal-backdrop.png") center center;
- 	border:4px solid transparent;
- 	border-image: url("assets/backdrop-button.png") 6 4 4 4 / 6px 4px 4px 4px stretch;
- 	background-clip: padding-box;
+    background:url("assets/metal-backdrop.png") center center;
+     border:4px solid transparent;
+    border-image: url("assets/backdrop-button.png") 6 4 4 4 / 6px 4px 4px 4px stretch;
+    background-clip: padding-box;
  }
 
 .button:hover{background-color:mix(@selected_bg_color,#000000,0.6);}
@@ -66,21 +75,21 @@ GtkContainer{background:@bg_color;}*/
 .button:active:focus,
 .button:active:hover:focus,
 .button:active:insensitive{
-	background:url("assets/metal.png") center center;
-	background-color:mix(@link_color,#000000,0.4;
- 	border:4px solid transparent;
- 	border-image:url("assets/button-active.png") 6 5 5 5 / 6px 5px 5px 5px stretch;
- 	background-clip: padding-box;
+    background:url("assets/metal.png") center center;
+    background-color:mix(@link_color,#000000,0.4;
+    border:4px solid transparent;
+    border-image:url("assets/button-active.png") 6 5 5 5 / 6px 5px 5px 5px stretch;
+    background-clip: padding-box;
 }
 
 .button:active:backdrop,
 .button:active:hover:backdrop,
 .button:active:insensitive,
 .button:active:insensitive:backdrop{
-	background:url("assets/metal-backdrop.png") center center;
- 	border:4px solid transparent;
- 	border-image: url("assets/button-active-backdrop.png") 6 5 5 5 / 6px 5px 5px 5px stretch;
- 	background-clip: padding-box;
+    background:url("assets/metal-backdrop.png") center center;
+    border:4px solid transparent;
+    border-image: url("assets/button-active-backdrop.png") 6 5 5 5 / 6px 5px 5px 5px stretch;
+    background-clip: padding-box;
 }
 
 .button:active,
@@ -93,13 +102,13 @@ GtkContainer{background:@bg_color;}*/
 .button:focus,
 .button.default:hover,
 .button.default:focus:hover{
-	background:url("assets/metal.png") center center;
- 	border:4px solid transparent;
- 	border-image: url("assets/button-default.png") 6 4 4 4 / 6px 4px 4px 4px stretch;
- 	border-radius:0px;
- 	box-shadow:none;
- 	text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
- 	background-clip: padding-box;
+    background:url("assets/metal.png") center center;
+    border:4px solid transparent;
+    border-image: url("assets/button-default.png") 6 4 4 4 / 6px 4px 4px 4px stretch;
+    border-radius:0px;
+    box-shadow:none;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    background-clip: padding-box;
 }
 
 .button.default:focus:hover{background-color:mix(@link_color,#000000,0.6);}
@@ -148,16 +157,16 @@ GtkContainer{background:@bg_color;}*/
 .toolbar .raised.linked .button:insensitive:backdrop,
 .inline-toolbar.toolbar .button:insensitive:backdrop,
 .inline-toolbar.toolbar GtkToolButton .button:insensitive:backdrop{
-	background:url("assets/metal.png") center center;
-	background-color:transparent;
- 	border:4px solid transparent;
- 	border-width:4px 0px;
- 	border-image:url("assets/button.png") 6 4 4 4 / 6px 0px 4px 0px stretch;
- 	border-radius:0px;
- 	text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
- 	background-clip: padding-box;
- 	box-shadow: inset 2px 0px 0px 0px shade(@fg_color, 0.52),
-    			inset 1px 0px 0px 0px shade(@fg_color, 0.35);
+    background:url("assets/metal.png") center center;
+    background-color:transparent;
+    border:4px solid transparent;
+    border-width:4px 0px;
+    border-image:url("assets/button.png") 6 4 4 4 / 6px 0px 4px 0px stretch;
+    border-radius:0px;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    background-clip: padding-box;
+    box-shadow: inset 2px 0px 0px 0px shade(@fg_color, 0.52),
+                inset 1px 0px 0px 0px shade(@fg_color, 0.35);
 }
 
 .linked .button:first-child,
@@ -179,15 +188,15 @@ GtkContainer{background:@bg_color;}*/
 .primary-toolbar .raised.linked .button:active:focus:first-child,
 .primary-toolbar .raised.linked .button:first-child
  {
-	background:url("assets/metal.png") center center;
-	background-color:transparent;
- 	border:4px solid transparent;
- 	border-width:4px 0px 4px 4px;
- 	border-image:url("assets/button.png") 6 4 4 4 / 6px 0px 4px 4px stretch;
- 	border-radius:0px;
- 	text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
- 	background-clip: padding-box;
- 	box-shadow: none;
+    background:url("assets/metal.png") center center;
+    background-color:transparent;
+    border:4px solid transparent;
+    border-width:4px 0px 4px 4px;
+    border-image:url("assets/button.png") 6 4 4 4 / 6px 0px 4px 4px stretch;
+    border-radius:0px;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    background-clip: padding-box;
+    box-shadow: none;
 }
 
 .linked .button:last-child,
@@ -202,16 +211,16 @@ GtkContainer{background:@bg_color;}*/
 .primary-toolbar .linked .button:active:hover:last-child,
 .primary-toolbar .button.raised.linked:last-child,
 .primary-toolbar .raised.linked .button:last-child {
-	background:url("assets/metal.png") center center;
-	background-color:transparent;
- 	border:4px solid transparent;
- 	border-width:4px 4px 4px 0px;
- 	border-image:url("assets/button.png") 6 4 4 4 / 6px 4px 4px 0px stretch;
- 	border-radius:0px;
- 	text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
- 	background-clip: padding-box;
- 	box-shadow: inset 2px 0px 0px 0px shade(@fg_color, 0.52),
-    			inset 1px 0px 0px 0px shade(@fg_color, 0.35);
+    background:url("assets/metal.png") center center;
+    background-color:transparent;
+    border:4px solid transparent;
+    border-width:4px 4px 4px 0px;
+    border-image:url("assets/button.png") 6 4 4 4 / 6px 4px 4px 0px stretch;
+    border-radius:0px;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    background-clip: padding-box;
+    box-shadow: inset 2px 0px 0px 0px shade(@fg_color, 0.52),
+                inset 1px 0px 0px 0px shade(@fg_color, 0.35);
 }
 .linked .button:active,
 .primary-toolbar .linked .button:active,
@@ -223,8 +232,8 @@ GtkContainer{background:@bg_color;}*/
 .primary-toolbar .linked .button:backdrop:last-child,
 .primary-toolbar .button.raised.linked:backdrop:last-child,
 .primary-toolbar .raised.linked .button:backdrop:last-child{
- 	box-shadow: inset 2px 0px 0px 0px shade(@fg_color, 0.52),
-    			inset 1px 0px 0px 0px shade(@fg_color, 0.35);
+    box-shadow: inset 2px 0px 0px 0px shade(@fg_color, 0.52),
+                inset 1px 0px 0px 0px shade(@fg_color, 0.35);
 }
 
 
@@ -234,15 +243,15 @@ GtkContainer{background:@bg_color;}*/
 .primary-toolbar .linked .button:active:only-child,
 .primary-toolbar .linked .button:active:hover:only-child,
 .primary-toolbar .linked .button:insensitive:only-child {
-	background:url("assets/metal.png") center center;
-	background-color:transparent;
- 	border:4px solid transparent;
- 	border-width:4px;
- 	border-image:url("assets/button.png") 6 4 4 4 / 6px 4px 4px 4px stretch;
- 	border-radius:0px;
- 	text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
- 	background-clip: padding-box;
- 	box-shadow: none;
+    background:url("assets/metal.png") center center;
+    background-color:transparent;
+    border:4px solid transparent;
+    border-width:4px;
+    border-image:url("assets/button.png") 6 4 4 4 / 6px 4px 4px 4px stretch;
+    border-radius:0px;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    background-clip: padding-box;
+    box-shadow: none;
     
 }
 .linked .button:active,
@@ -273,7 +282,7 @@ GtkContainer{background:@bg_color;}*/
 .toolbar .raised.linked .button:hover,
 .inline-toolbar.toolbar .button:hover,
 .inline-toolbar.toolbar GtkToolButton .button:hover{
-	background-color:mix(@selected_bg_color,#000000,0.6);
+    background-color:mix(@selected_bg_color,#000000,0.6);
 }
 
 /*******************
@@ -305,11 +314,13 @@ GtkCheckButton:selected:focus {
 .cell {
     -GtkCheckButton-indicator-size: 16;
     -GtkWidget-focus-line-width: 0;
-    background:@bg_color;
+    background:none;
     border:none;
     padding:0px;
     box-shadow:none;
 }
+
+
 row:hover,
 row:hover:focused{background:mix(@selected_bg_color,@bg_color,0.95); border:none;}
 
@@ -342,14 +353,14 @@ column-header .button:hover:focus:backdrop,
 column-header .button:active:focus:backdrop,
 column-header .button:active:hover:focus:backdrop,
 column-header:nth-child(last) .button:backdrop{
-	background:none;
- 	border:none;
- 	border-image:none;
- 	border-radius:0px;
- 	box-shadow: inset -1px 0 alpha(@fg_color, 0.07),
+    background:none;
+    border:none;
+    border-image:none;
+    border-radius:0px;
+    box-shadow: inset -1px 0 alpha(@fg_color, 0.07),
                 inset 0 -1px alpha(@fg_color, 0.07);
- 	text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
- 	background-clip: padding-box;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    background-clip: padding-box;
     padding: 5px 6px;
 }
 column-header .button:active,
@@ -358,17 +369,22 @@ column-header .button:active:focus,
 column-header .button:active:hover:focus,
 column-header .button:hover:focus,
 column-header .button:focused{
-	background:-gtk-gradient (linear, 0 0, 0 1, color-stop(0.84, transparent), color-stop(0.84, mix(@selected_bg_color,#000000,0.35)), color-stop(1, mix(@selected_bg_color,#000000,0.35)));
-	box-shadow: inset -1px 0 alpha(@fg_color, 0.07),
+    background:-gtk-gradient (linear, 0 0, 0 1, color-stop(0.84, transparent), color-stop(0.84, mix(@selected_bg_color,#000000,0.35)), color-stop(1, mix(@selected_bg_color,#000000,0.35)));
+    box-shadow: inset -1px 0 alpha(@fg_color, 0.07),
                 inset 0 -1px alpha(@fg_color, 0.07);
-	padding: 5px 6px;
+    padding: 5px 6px;
 }
 column-header .button:hover,
 column-header .button:active:hover,
 column-header .button:focus:hover{
-	background:mix(@selected_bg_color,#000000,0.35); border:none;
-	padding: 5px 6px;
+    background:mix(@selected_bg_color,#000000,0.35); border:none;
+    padding: 5px 6px;
 }
+column-header:nth-child(last) .button{
+    border-right:0px;
+    box-shadow: inset 0 -1px alpha(@fg_color, 0.07);
+}
+
 
 /*********
  * entry *
@@ -405,16 +421,16 @@ column-header .button:focus:hover{
 .entry:selected,
 .entry:selected:focus,
 .entry:selected:focused{
-	 background-color:@selected_bg_color;
-	 color: @selected_fg_color;
+     background-color:@selected_bg_color;
+     color: @selected_fg_color;
 }
 
 .entry:focused,
 .entry:active,
 .primary-toolbar .entry:focus{
     background-color:none;
-	border-width:2px;
-	border-image: url("assets/entry-focus.svg") 0 1 1 1 / 0 1 1 1 stretch;
+    border-width:2px;
+    border-image: url("assets/entry-focus.svg") 0 1 1 1 / 0 1 1 1 stretch;
 }
 
 
@@ -488,33 +504,33 @@ GtkComboBox.combobox-entry .entry:last-child{
     border-image: url("assets/entry.svg") 0 0 1 1 / 0 0 1 1 stretch;
 }
 GtkComboBox.combobox-entry .entry:insensitive{
-	border-image: url("assets/entry-insensitive.svg") 0 0 1 1 / 0 0 1 1 stretch;
+    border-image: url("assets/entry-insensitive.svg") 0 0 1 1 / 0 0 1 1 stretch;
 }
-	
+    
 GtkComboBox.combobox-entry .entry:focus,
 GtkComboBox.combobox-entry:active .entry{
-	border-width:0px 0px 2px 2px;
+    border-width:0px 0px 2px 2px;
     border-image: url("assets/entry-focus.svg") 0 0 1 1 / 0 0 1 1 stretch;
 }
 
 GtkComboBox.combobox-entry .button,
 GtkComboBox.combobox-entry .button:backdrop,
 GtkComboBox.combobox-entry .button:last-child{
-	background:none;
+    background:none;
     border-width:0px 1px 1px 0px;
     border-image: url("assets/entry.svg") 0 1 1 0 / 0 1 1 0 stretch;
 }
 
 GtkComboBox.combobox-entry .button:insensitive,
 GtkComboBox.combobox-entry .button:insensitive:backdrop{
-	background:none;
+    background:none;
     border-width:0px 1px 1px 0px;
     border-image: url("assets/entry-insensitive.svg") 0 1 1 0 / 0 1 1 0 stretch;
 }
 
 GtkComboBox.combobox-entry .button:active{
-	background:mix(@selected_bg_color,#000000,0.35);
-	border-width:0px 1px 1px 0px;
+    background:mix(@selected_bg_color,#000000,0.35);
+    border-width:0px 1px 1px 0px;
     border-image: url("assets/entry.svg") 0 1 1 0 / 0 1 1 0 stretch;
     border-radius:0px;
     padding:4px 6px;
@@ -529,7 +545,7 @@ GtkComboBox.combobox-entry .button:active{
     border-radius:0px;
     border-width: 1px 1px 0px 1px;
     border-style: solid;
-    border-color: alpha(@fg_color, 0.1);
+    border-color: none;
     border-image: url("assets/frame.svg") 1 1 0 1 / 1px 1px 0px 1px stretch;
 }
 
@@ -598,41 +614,41 @@ GtkLabel:insensitive {
 GtkMenuToolButton.menu,
 .primary-toolbar .button .menu,
 .menu {
-	background:#373737; 
-	border:none;
-	border-image:none;
-	border:none;
-	box-shadow:none;
-	padding:0px;
+    background:#373737; 
+    border:none;
+    border-image:none;
+    border:none;
+    box-shadow:none;
+    padding:0px;
 }
 
 .toolbar .menu,
 GtkComboBox .menu {
-		color:#e3e3e3;
-		padding:0px;
-		border-radius:0px;
+        color:#e3e3e3;
+        padding:0px;
+        border-radius:0px;
 }
 
 .menuitem {
-		border-radius:0;
-		border-style: solid;
-		border-width:0px;
-		padding: 3px 2px 3px 2px;
-		text-shadow: none;
-		color:mix (@fg_color, #000000, 0.05);
-		text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
+        border-radius:0;
+        border-style: solid;
+        border-width:0px;
+        padding: 3px 2px 3px 2px;
+        text-shadow: none;
+        color:mix (@fg_color, #000000, 0.05);
+        text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
 }
 
 .unity-panel.menubar.menuitem:hover,
 .unity-panel.menubar .menuitem *:hover,
 .menubar.menuitem:hover,
 .menubar .menuitem:hover {
-	/*background:mix (@bg_color, #33b5e5, 0.15);*/
-	background:#373737; 
-	border-image:none;
-	border-radius:0px;
-	/*border-bottom:4px solid #33b5e5;*/
-	color:@fg_color;
+    /*background:mix (@bg_color, #33b5e5, 0.15);*/
+    background:#373737; 
+    border-image:none;
+    border-radius:0px;
+    /*border-bottom:4px solid #33b5e5;*/
+    color:@fg_color;
 }
 
 
@@ -642,32 +658,31 @@ GtkTreeMenu .menuitem.separator,
 GtkMenuToolButton .menuitem.separator,
 .primary-toolbar .button .menuitem.separator,
 .menuitem.separator {
-	border-width: 1px 0 1px 0;
-	border-image: url("assets/bg-sep-h.png") 1 0 1 0 stretch;
+    border-width: 1px 0 1px 0;
+    border-image: url("assets/bg-sep-h.png") 1 0 1 0 stretch;
 }
 
 /*combox listas desplegables*/
 GtkComboBox .menuitem * {
-		color:#e3e3e3;
-		border:none;
-		margin:0px;
-		background:none;
-
+        color:#e3e3e3;
+        border:none;
+        margin:0px;
+        background:none;
 }
 .menuitem:hover,
 .menu .menuitem:hover {
-		background:rgba(0,0,0,0.2);
-		border-radius:0px;
-		border:0px;
-		background-image:none;
-		border-image:none;
-		border-image-width: 0px;
-		color: @selected_fg_color;
-		box-shadow:none;
-		text-shadow:none;
+        background:rgba(0,0,0,0.2);
+        border-radius:0px;
+        border:0px;
+        background-image:none;
+        border-image:none;
+        border-image-width: 0px;
+        color: @selected_fg_color;
+        box-shadow:none;
+        text-shadow:none;
 }
 GtkComboBox .menuitem *:hover {
-	color: #efefef;
+    color: #efefef;
 }
 
 .menuitem GtkCalendar,
@@ -683,17 +698,34 @@ GtkComboBox .menuitem *:hover {
     background-image: none;
 }
 
+
+
+/*menu*/
+.menubar .menuitem .scale.highlight.left,
+.scale.highlight.left,
+.progressbar,
+.progressbar row,
+.progressbar row:hover,
+.progressbar row:selected,
+.progressbar row:selected:focused {
+    border-radius:0px;
+    border-width:2px 7px 3px 0;
+    background-image: none;
+    background-color:inherit;
+    border-style:inherit;
+}
+
 /****************************Tabs************************/
 
 .notebook{background:none; background-clip: border-box; border-radius:0px; border:none; padding:0px;}
 .notebook tab{
-	background:none;
-	border:none;
-	box-shadow:none;
-	-unico-focus-border-color:transparent;
-	-unico-focus-fill-color:transparent;
-	-unico-focus-border-width:0px;
-	padding:10px 0px;
+    background:none;
+    border:none;
+    box-shadow:none;
+    -unico-focus-border-color:transparent;
+    -unico-focus-fill-color:transparent;
+    -unico-focus-border-width:0px;
+    padding:10px 0px;
 }
 .notebook tab GtkLabel{background:none; border:none; padding:0px 35px; text-shadow: 0px 1px 0px rgba(0,0,0,0.5);}
 
@@ -816,20 +848,61 @@ GtkScale.vertical {
 }
 
 
-/*menu*/
-.menubar .menuitem .scale.highlight.left,
-.scale.highlight.left,
-.progressbar,
-.progressbar row,
-.progressbar row:hover,
-.progressbar row:selected,
-.progressbar row:selected:focused {
-    border-radius:0px;
-    border-width:2px 7px 3px 0;
-    background-image: none;
-    background-color:inherit;
-    border-style:inherit;
+/**********
+ * switch *
+ **********/
+GtkSwitch {
+    border-radius: 0px;
+    padding: 0;
+    background:none;
+    -GtkRange-slider-width: 27;
+    -GtkRange-trough-border: 0;
+    -GtkScale-slider-length: 27;
+    -GtkWidget-focus-line-width: 0;
 }
+
+GtkSwitch.trough,
+GtkSwitch.trough:active,
+GtkSwitch.trough:backdrop,
+GtkSwitch.trough:active:backdrop{
+    background:alpha(@fg_color,0.1);
+    border:1px solid mix(@bg_color,@fg_color,0.01);
+    border-image:none;
+    box-shadow:0px 0px 4px rgba(0,0,0,0.8) inset;
+    border-radius:18px;
+}
+GtkSwitch.trough:insensitive,
+GtkSwitch.trough:active:insensitive{
+    background:alpha(@fg_color,0.05);
+    border:1px solid mix(@bg_color,@fg_color,0.01);
+    border-image:none;
+    box-shadow:0px 0px 4px rgba(0,0,0,0.4) inset;
+    border-radius:18px;
+}
+GtkSwitch.trough:active{
+    background:alpha(@selected_bg_color,0.2);
+}
+
+GtkSwitch.slider,
+GtkSwitch.slider:active,
+GtkSwitch.slider:backdrop,
+GtkSwitch.slider:active:insensitive,
+GtkSwitch.slider:insensitive{
+    padding:1px;
+    margin:0px;
+    border-radius:0px;
+    border:none;
+    background:@transparent url("assets/switch-off.png") center center no-repeat;
+}
+
+
+GtkSwitch.slider:active {
+    background-image:url("assets/switch-on.png");
+}
+
+
+
+
 
 /**************
 Reproductor
@@ -875,15 +948,15 @@ Reproductor
 .inline-toolbar.toolbar GtkToolButton:only-child .button:insensitive,
 .inline-toolbar.toolbar GtkToolButton:only-child .button:backdrop,
 .inline-toolbar.toolbar GtkToolButton:only-child .button:backdrop:insensitive {
-	background:url("assets/metal.png") center center;
-	background-color:transparent;
- 	border:4px solid transparent;
- 	border-width:4px;
- 	border-image:url("assets/button.png") 6 4 4 4 / 6px 4px 4px 4px stretch;
- 	border-radius:0px;
- 	text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
- 	background-clip: padding-box;
- 	box-shadow: none;
+    background:url("assets/metal.png") center center;
+    background-color:transparent;
+    border:4px solid transparent;
+    border-width:4px;
+    border-image:url("assets/button.png") 6 4 4 4 / 6px 4px 4px 4px stretch;
+    border-radius:0px;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    background-clip: padding-box;
+    box-shadow: none;
 }
 /* inline-toolbar */
 .inline-toolbar.toolbar {
@@ -892,11 +965,11 @@ Reproductor
                  
 /*Unity*/
 .unity-panel{
-	background-image:#bg_color;
-	border:none;
-	border-image:none;
-	color:mix (@fg_color, #000000, 0.05);
-	text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
+    background-image:#bg_color;
+    border:none;
+    border-image:none;
+    color:mix (@fg_color, #000000, 0.05);
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
 }
 .unity-panel:backdrop,
 .unity-panel:active,
@@ -907,8 +980,8 @@ Reproductor
 /*Nautilus*/
 NautilusWindow GtkContainer{background:@base_color; box-shadow: inset 0px 0px 48px 48px rgba(44, 44, 44, 0.28);}
 /* darle bg al contenededor
-NautilusWindow *{	background-color: #484848; 
-	box-shadow: inset 0px 0px 48px 48px rgba(44, 44, 44, 0.28);}
+NautilusWindow *{   background-color: #484848; 
+    box-shadow: inset 0px 0px 48px 48px rgba(44, 44, 44, 0.28);}
 */
 .nautilus-desktop.nautilus-canvas-item 
 {    color: @fg_color;
@@ -922,3 +995,6 @@ GcalctoolWindow .entry,
 GcalctoolWindow .entry:focus{background:@bg_color;}
 */
 GtkViewport.frame{padding:5px;}
+
+
+

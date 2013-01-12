@@ -7,6 +7,7 @@
 @define-color selected_fg_color #EFEFEF;
 @define-color tooltip_bg_color #404040;
 @define-color tooltip_fg_color #EFEFEF;
+@define-color transparent rgba (0, 0, 0, 0);
 
 /* misc colors used by gtk+ */
 @define-color info_fg_color #EFEFEF;
