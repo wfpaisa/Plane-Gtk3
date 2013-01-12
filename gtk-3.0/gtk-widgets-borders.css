@@ -387,7 +387,7 @@ GtkSwitch.trough:backdrop,
 }
 
 GtkSwitch.trough {
-   
+    border-image: url("assets/switch-trough-off.png") 10 12 10 12 / 10px 12px 10px 12px stretch;
 }
 
 GtkSwitch.trough:active {
