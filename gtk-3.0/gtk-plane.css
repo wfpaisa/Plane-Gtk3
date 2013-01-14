@@ -289,23 +289,104 @@ GtkContainer:backdrop,
  * check and radio *
  *******************/
 .check,
-.radio,
+.check:hover,
+.check:active,
+.check:active:hover,
+.check:backdrop,
+.check:backdrop:active,
+.check:backdrop:insensitive,
+.check:backdrop:insensitive:active,
+.check:backdrop:inconsistent,
+.check:backdrop:inconsistent:insensitive,
 .check:insensitive,
-.radio:insensitive {
-    background-color: transparent;
-    border-style: none;
-    margin: 1px 0;
+.check:insensitive:active,
+.check:inconsistent,
+.check:inconsistent:hover,
+.check:inconsistent:insensitive,
+.check:inconsistent:insensitive:active{
+    background:alpha(@fg_color,0.1) url("assets/transparent.png");
+    border:none;
+    box-shadow: 0 0 2px 3px alpha(#000000,0.5) inset,
+                0 0 0px 1px alpha(#FFFFFF,0.2) inset;
 }
-
-GtkCheckButton:hover,
-GtkCheckButton:active:hover,
-GtkCheckButton:selected,
-GtkCheckButton:selected:focus {
-    background-color: transparent;
+.check:active,
+.check:active:hover{
+     background:alpha(@fg_color,0.1) url("assets/check-active.png") left center no-repeat;    
 }
-
-.menu .radio * {
-    box-shadow: none;
+.check:hover,
+.check:inconsistent:hover{
+    background-color: alpha(@selected_bg_color,0.3);
+}
+.check:active:hover{
+    background-color: alpha(@selected_bg_color,0.15);
+}
+.check:insensitive:active,
+.check:backdrop:active,
+.check:backdrop:insensitive:active{
+     background:alpha(@fg_color,0.1) url("assets/check-disable.png") left center no-repeat;
+}
+.check:inconsistent,
+.check:inconsistent:hover{
+    background:alpha(@fg_color,0.1) url("assets/check-mixed.svg") center center no-repeat;
+}
+.check:inconsistent:hover{
+    background-color: alpha(@selected_bg_color,0.15);
+}
+.check:inconsistent:insensitive,
+.check:backdrop:inconsistent,
+.check:backdrop:inconsistent:insensitive{
+    background:alpha(@fg_color,0.1) url("assets/check-mixed-disable.svg") center center no-repeat;  
+}
+/*radio*/
+.radio,
+.radio:hover,
+.radio:active,
+.radio:active:hover,
+.radio:backdrop,
+.radio:backdrop:active,
+.radio:backdrop:insensitive,
+.radio:backdrop:insensitive:active,
+.radio:backdrop:inconsistent,
+.radio:backdrop:inconsistent:insensitive,
+.radio:insensitive,
+.radio:insensitive:active,
+.radio:inconsistent,
+.radio:inconsistent:hover,
+.radio:inconsistent:insensitive,
+.radio:inconsistent:insensitive:active{
+    background:alpha(@fg_color,0.1) url("assets/transparent.png");
+    border:none;
+    box-shadow: 0 0 2px 3px alpha(#000000,0.5) inset,
+                0 0 0px 1px alpha(#FFFFFF,0.2) inset;
+    border-radius:50%;
+}
+.radio:active,
+.radio:active:hover{
+     background:alpha(@fg_color,0.1) url("assets/radio-active.png") center center no-repeat;    
+}
+.radio:hover,
+.radio:inconsistent:hover{
+    background-color: alpha(@selected_bg_color,0.3);
+}
+.radio:active:hover{
+    background-color: alpha(@selected_bg_color,0.15);
+}
+.radio:insensitive:active,
+.radio:backdrop:active,
+.radio:backdrop:insensitive:active{
+     background:alpha(@fg_color,0.1) url("assets/radio-disable.png") center center no-repeat;
+}
+.radio:inconsistent,
+.radio:inconsistent:hover{
+    background:alpha(@fg_color,0.1) url("assets/check-mixed.svg") center center no-repeat;
+}
+.radio:inconsistent:hover{
+    background-color: alpha(@selected_bg_color,0.15);
+}
+.radio:inconsistent:insensitive,
+.radio:backdrop:inconsistent,
+.radio:backdrop:inconsistent:insensitive{
+    background:alpha(@fg_color,0.1) url("assets/check-mixed-disable.svg") center center no-repeat;  
 }
 
 /****************
@@ -859,6 +940,7 @@ GtkSwitch {
     -GtkRange-trough-border: 0;
     -GtkScale-slider-length: 27;
     -GtkWidget-focus-line-width: 0;
+    
 }
 
 GtkSwitch.trough,
@@ -866,17 +948,17 @@ GtkSwitch.trough:active,
 GtkSwitch.trough:backdrop,
 GtkSwitch.trough:active:backdrop{
     background:alpha(@fg_color,0.1);
-    border:1px solid mix(@bg_color,@fg_color,0.01);
-    border-image:none;
-    box-shadow:0px 0px 4px rgba(0,0,0,0.8) inset;
+    border:none;
+    box-shadow: 0 0 2px 3px alpha(#000000,0.4) inset,
+                0 0 0px 1px alpha(#FFFFFF,0.2) inset;
     border-radius:18px;
 }
 GtkSwitch.trough:insensitive,
 GtkSwitch.trough:active:insensitive{
     background:alpha(@fg_color,0.05);
-    border:1px solid mix(@bg_color,@fg_color,0.01);
-    border-image:none;
-    box-shadow:0px 0px 4px rgba(0,0,0,0.4) inset;
+    border:none;
+    box-shadow: 0 0 2px 3px alpha(#000000,0.2) inset,
+                0 0 0px 1px alpha(#FFFFFF,0.1) inset;
     border-radius:18px;
 }
 GtkSwitch.trough:active{
@@ -900,7 +982,7 @@ GtkSwitch.slider:active {
     background-image:url("assets/switch-on.png");
 }
 
-
+GtkSwitch *{-GtkCheckButton-indicator-size: 27}
 
 
 
@@ -997,4 +1079,4 @@ GcalctoolWindow .entry:focus{background:@bg_color;}
 GtkViewport.frame{padding:5px;}
 
 
-
+.grip{background:#EE32C9}
