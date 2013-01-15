@@ -32,11 +32,11 @@ GtkWidget *:insensitive{background:@transparent; box-shadow:none;}
 /*
 Fondos negros, descomentar:
 background blacks uncomment:
-
 */
+
 GtkContainer,
 .background,
-*{background:#404040; box-shadow:none;}
+*{background:@bg2_color; box-shadow:none;}
 
 GtkContainer:backdrop,
 .background:backdrop,
@@ -928,7 +928,39 @@ GtkScale.vertical {
  border-image: url("assets/scale-trough-disable-v.png") 0 2 9 3 / 0px 2px 9px 3px stretch;   
 }
 
+/*progressbar*/
 
+.trough,
+.trough row,
+.trough row:hover,
+.trough row:selected,
+.trough row:selected:focused {
+    border:none;
+    box-shadow:none;
+    border-radius:0px;
+    margin:0px;
+    padding:0px;
+    background:url("assets/trough.svg") right center no-repeat;
+    text-shadow:0px 0px 1px #000000;
+}
+.progressbar,
+.progressbar row,
+.progressbar row:hover,
+.progressbar row:selected,
+.progressbar row:selected:focused,
+.progressbar:backdrop,
+.progressbar row:backdrop,
+.progressbar row:hover:backdrop,
+.progressbar row:selected:backdrop,
+.progressbar row:selected:focused:backdrop,
+.scale.highlight.bottom:backdrop,
+.progressbar.vertical:backdrop{
+    border:5px solid #404040;
+    border:none;
+    background:url("assets/progressbar.svg") right center no-repeat;
+    box-shadow:none;
+    margin:0px;
+}
 /**********
  * switch *
  **********/
@@ -940,6 +972,7 @@ GtkSwitch {
     -GtkRange-trough-border: 0;
     -GtkScale-slider-length: 27;
     -GtkWidget-focus-line-width: 0;
+
     
 }
 

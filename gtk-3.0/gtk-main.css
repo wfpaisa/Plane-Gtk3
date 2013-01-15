@@ -1,6 +1,6 @@
 /*default color scheme */
-@define-color bg_color #EFEFEF;
-@define-color fg_color #484848;
+@define-color bg_color #484848;
+@define-color fg_color #EFEFEF;
 @define-color base_color #484848;
 @define-color text_color #EFEFEF;
 @define-color selected_bg_color #33b5e5;
@@ -8,6 +8,7 @@
 @define-color tooltip_bg_color #404040;
 @define-color tooltip_fg_color #EFEFEF;
 @define-color transparent rgba (0, 0, 0, 0);
+@define-color bg2_color #404040;
 
 /* misc colors used by gtk+ */
 @define-color info_fg_color #EFEFEF;
