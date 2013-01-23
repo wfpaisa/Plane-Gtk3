@@ -10,7 +10,7 @@ NautilusWindow * {
 
 /* desktop mode */
 .nautilus-desktop.nautilus-canvas-item {
-    color: @bg_color;
+    color: @fg_color;
     text-shadow: 1px 1px alpha (#000000, 0.8);
 }
 
@@ -104,16 +104,15 @@ NautilusFloatingBar .button {
 /* sidebar */
 NautilusWindow .sidebar,
 NautilusWindow .sidebar .view {
-    background-color: shade (@bg_color, 0.95);
-
-    /*background-color: @bg_color;*/
-
+    background-color:@bg_color;
     color: @fg_color;
-    text-shadow: 0 1px shade (shade (@bg_color, 0.95), 1.04); 
+    text-shadow: 0 1px shade (shade (@bg_color, 0.95), 1.04);
+    /*box-shadow:-5px 0 5px 0px #000000 inset;*/
+   
 }
 
 NautilusWindow .sidebar .frame {
-    border-width: 1px 0 0 0;
+    border-width: 0;
     border-style: solid;
     border-color: shade (@bg_color, 0.86);
     border-radius: 0;

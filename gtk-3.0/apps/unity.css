@@ -1,14 +1,10 @@
 UnityPanelWidget,
-.unity-panel {
-    background-image: -gtk-gradient (linear, left top, left bottom,
-                                     from (shade (@dark_bg_color, 1.5)),
-                                     to (shade (@dark_bg_color, 1.04)));
-    border-top-color: shade (@dark_bg_color, 1.6);
-    border-style: solid;
-    border-width: 1px 0 0 0;
-
-    color: @dark_fg_color;
-    text-shadow: 0 -1px shade (@dark_bg_color, 0.7);
+.unity-panel{
+    background-image:#bg_color;
+    border:none;
+    border-image:none;
+    color:mix (@fg_color, #000000, 0.05);
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
 }
 
 .unity-panel.menubar,
