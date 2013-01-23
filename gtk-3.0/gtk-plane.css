@@ -21,7 +21,7 @@ nfg_color_dark:#dfdbd2  //color del los textos del sistema cuando se pide en osc
 */
 
 
-/*color de las ventanas y sombras internas de las ventanas*/
+/*color de las ventanas y sombras internas de las ventanas
 GtkWidget{background:@base_color; box-shadow: inset 0px 0px 48px 48px rgba(44, 44, 44, 0.28);}
 GtkWidget:backdrop{background:mix (@bg_color, #FFFFFF, 0.13);}
 GtkWidget *,    
@@ -34,13 +34,6 @@ Fondos negros, descomentar:
 background blacks uncomment:
 */
 
-GtkContainer,
-.background,
-*{background:@bg2_color; box-shadow:none;}
-
-GtkContainer:backdrop,
-.background:backdrop,
-*:backdrop{background:#515151; box-shadow:none;}
 
 
 /*****************Botones****************/
