@@ -184,9 +184,10 @@ GtkAssistant .sidebar {
 }
 .button:backdrop {
 	background-image:url("assets/metal-backdrop.png");
-	background-color:alpha(@fg_color,0.1);
+	background-color:@backdrop_bg_color;
 	border-image: url("assets/backdrop-button.png") 6 4 4 4 / 6px 4px 4px 4px stretch;
 }
+
 .button:insensitive{
 	background-image:url("assets/metal-backdrop.png");
 	border-image: url("assets/backdrop-button.png") 6 4 4 4 / 6px 4px 4px 4px stretch;
@@ -206,11 +207,15 @@ GtkAssistant .sidebar {
 
 .button:active {
 	background-color:alpha(@selected_bg_color,0.4);
-	border-image:url("assets/button-active.png") 6 5 5 5 / 6px 5px 5px 5px stretch;
+	
 }
 .button:active:focus{
 	border-image:url("assets/button-active-focus.png") 6 5 5 5 / 6px 5px 5px 5px stretch;
 }
+.button:active:hover:focus{
+	border-image:url("assets/button-active.png") 6 5 5 5 / 6px 5px 5px 5px stretch;
+}
+
 .button:active:hover {
    background-color:alpha(@selected_bg_color,0.5);
 }
@@ -305,8 +310,9 @@ GtkAssistant .sidebar {
 	border-right-width: 0;
 	border-left-width: 0;
 	border-image-width: 6px 0px 4px 0px;
-	box-shadow: inset 2px 0px 0px 0px shade(@fg_color, 0.52),
-				inset 1px 0px 0px 0px shade(@fg_color, 0.35);    
+	box-shadow: inset 2px 0px 0px 0px alpha(#FFF, 0.1),
+				inset 1px 0px 0px 0px alpha(#000, 0.3); 
+
 
 }
 
@@ -343,6 +349,7 @@ GtkAssistant .sidebar {
 .linked .button:focus:only-child,
 .linked .button:focus:active:only-child,
 .linked .button:insensitive:only-child {
+		border-image: url("assets/button.png") 6 4 4 4 / 6px 4px 4px 4px stretch;
 }
 
 /* Set up shadows and hilights for button visual separation */
@@ -920,7 +927,9 @@ GtkIconView.view.cell:selected:focused {
  * image *
  *********/
 GtkImage,
-GtkImage:insensitive {
+GtkImage:backdrop,
+GtkImage:insensitive,
+GtkImage:insensitive:backdrop {
 	background-color: transparent;
 }
 
@@ -958,9 +967,12 @@ GtkImage:insensitive {
  * label *
  *********/
 GtkLabel,
-GtkLabel:insensitive {
+GtkLabel:backdrop,
+GtkLabel:insensitive,
+GtkLabel:insensitive:backdrop{
 	background-color: transparent;
 }
+
 
 /********
  * menu *
@@ -1160,9 +1172,9 @@ GtkComboBox .menu .menuitem *:insensitive {
  * notebook *
  ************/
 
-.notebook{background:none; background-clip: border-box; border-radius:0px; border:none; padding:0px;}
+.notebook{background-color:@bg_color; background-clip: border-box; border-radius:0px; border:none; padding:0px;}
 .notebook tab{
-	background:none;
+	background-color:@bg_color;
 	border:none;
 	box-shadow:none;
 	-unico-focus-border-color:transparent;
@@ -1173,18 +1185,24 @@ GtkComboBox .menu .menuitem *:insensitive {
 .notebook tab GtkLabel{background:none; border:none; padding:0px 35px; text-shadow: 0px 1px 0px rgba(0,0,0,0.5);}
 
 .notebook tab.top{border:none; border-image:url("assets/notebook-tab-active.png") 0 1 0 0 / 10px 1px 10px 0px stretch; padding:10px 0px;}
-.notebook tab.top:active {background:-gtk-gradient (linear, 0 0, 0 1, color-stop(0.84, transparent), color-stop(0.84, @selected_bg_color), color-stop(1, @selected_bg_color)); border-left-width:0px; border-image: url("assets/notebook-tab-active.png") 0 1 0 0 / 10px 1px 10px 0px; background-clip: border-box;  padding:10px 0px;}
+.notebook tab.top:active {background-image:-gtk-gradient (linear, 0 0, 0 1, color-stop(0.84, transparent), color-stop(0.84, @selected_bg_color), color-stop(1, @selected_bg_color)); border-left-width:0px; border-image: url("assets/notebook-tab-active.png") 0 1 0 0 / 10px 1px 10px 0px; background-clip: border-box;  padding:10px 0px;}
 
 .notebook tab.right{border:none; border-image:url("assets/notebook-tab-active.png") 0 0 1 0 / 0px 10px 1px 10px stretch; padding:8px 0px;}
-.notebook tab.right:active {background:-gtk-gradient (linear, 1 0, 0 0, color-stop(0.95, transparent), color-stop(0.95, @selected_bg_color), color-stop(1, @selected_bg_color)); border-left-width:0px; border-image: url("assets/notebook-tab-active.png") 0 0 1 0 / 0px 10px 1px 10px; background-clip: border-box; padding:8px 0px;}
+.notebook tab.right:active {background-image:-gtk-gradient (linear, 1 0, 0 0, color-stop(0.95, transparent), color-stop(0.95, @selected_bg_color), color-stop(1, @selected_bg_color)); border-left-width:0px; border-image: url("assets/notebook-tab-active.png") 0 0 1 0 / 0px 10px 1px 10px; background-clip: border-box; padding:8px 0px;}
 
 .notebook tab.bottom{border:none; border-image:url("assets/notebook-tab-active.png") 0 1 0 0 / 10px 1px 10px 0px stretch; padding:10px 0px;}
-.notebook tab.bottom:active {background:-gtk-gradient (linear, 0 1, 0 0, color-stop(0.84, transparent), color-stop(0.84, @selected_bg_color), color-stop(1, @selected_bg_color)); border-left-width:0px; border-image: url("assets/notebook-tab-active.png") 0 1 0 0 / 10px 1px 10px 0px; background-clip: border-box; padding:10px 0px;}
+.notebook tab.bottom:active {background-image:-gtk-gradient (linear, 0 1, 0 0, color-stop(0.84, transparent), color-stop(0.84, @selected_bg_color), color-stop(1, @selected_bg_color)); border-left-width:0px; border-image: url("assets/notebook-tab-active.png") 0 1 0 0 / 10px 1px 10px 0px; background-clip: border-box; padding:10px 0px;}
 
 .notebook tab.left{border:none; border-image:url("assets/notebook-tab-active.png") 0 0 1 0 / 0px 10px 1px 10px stretch; padding:8px 0px;}
-.notebook tab.left:active {background:-gtk-gradient (linear, 0 0, 1 0, color-stop(0.95, transparent), color-stop(0.95, @selected_bg_color), color-stop(1, @selected_bg_color)); border-left-width:0px; border-image: url("assets/notebook-tab-active.png") 0 0 1 0 / 0px 10px 1px 10px; background-clip: border-box; padding:8px 0px;}
+.notebook tab.left:active {background-image:-gtk-gradient (linear, 0 0, 1 0, color-stop(0.95, transparent), color-stop(0.95, @selected_bg_color), color-stop(1, @selected_bg_color)); border-left-width:0px; border-image: url("assets/notebook-tab-active.png") 0 0 1 0 / 0px 10px 1px 10px; background-clip: border-box; padding:8px 0px;}
 
-
+.notebook tab .button{
+	background-color:@bg_color;
+}
+.notebook:backdrop,
+.notebook tab:backdrop{
+	background-color:@backdrop_bg_color;
+}
 
 /******************
  * pane separator *
@@ -1598,10 +1616,11 @@ GtkComboBox .menuitem.separator {
  ***********/
 .sidebar,
 .sidebar .view {
+	background-image:url("assets/sidebar-dark.png") right top;
 }
 
 .sidebar row:selected {
-	text-shadow: 0 1px shade (@selected_bg_color, 0.7);
+	
 }
 
 .sidebar .frame {
