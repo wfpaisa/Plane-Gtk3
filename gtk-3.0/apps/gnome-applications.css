@@ -73,6 +73,8 @@ GeditWindow .sidebar {
 GeditPanel .notebook {
     padding: 2px;
     border-width: 1px 0;
+    color:#FFF;
+    background: #232323;
 }
 
 GeditWindow .notebook {

@@ -21,7 +21,7 @@
 	-GtkMenu-vertical-padding: 5px;
 	-GtkMenuBar-internal-padding: 0;
 	-GtkMenuItem-arrow-scaling: 0.6;
-	-GtkNotebook-tab-overlap: 1;
+	-GtkNotebook-tab-overlap: 0;
 	-GtkPaned-handle-size: 6;
 	-GtkProgressBar-min-horizontal-bar-height: 14;
 	-GtkProgressBar-min-vertical-bar-width: 14;
@@ -64,7 +64,7 @@
 	/*-unico-arrow-texture: url("assets/combobox-arrow.png");*/
 
 	-unico-focus-border-color: alpha (@selected_bg_color, 0.5);
-	-unico-focus-border-radius: 5;
+	-unico-focus-border-radius: 0;
 	-unico-focus-fill-color: alpha (@selected_bg_color, 0.1);
 }
 
@@ -408,14 +408,14 @@ GtkAssistant .sidebar {
 /****************
  * cell and row *
  ****************/
-.cell {
+.cell{
 	-GtkCheckButton-indicator-size: 16;
 	-GtkWidget-focus-line-width: 0;
 	background-color: @base_color;
 	border-radius: 0;
 	border-width: 0;
 }
-
+.cell
 
 row:selected,
 row:active,
@@ -427,9 +427,15 @@ row:hover {
 	background-color:alpha(@selected_bg_color,0.1);
 }
 
-row:selected:insensitive,
-row:selected:backdrop{
-	 background-color:alpha(@fg_color,0.1);
+row:insensitive,
+row:backdrop{
+	 background-color:@backdrop_bg_color;
+}
+
+row:selected:backdrop,
+row:active:backdrop,
+row:selected:focused:backdrop{
+	background-color:alpha(@selected_bg_color,0.2);
 }
 
 
@@ -890,7 +896,7 @@ GtkComboBox.combobox-entry .button:active{
 	border-color: none;
 	border-image: url("assets/frame.svg") 1 1 0 1 / 1px 1px 0px 1px stretch;
 }
-.frame:backdrop{background:@backdrop_bg_color}
+.frame:backdrop{background-color:@backdrop_bg_color}
 .frame GtkLabel{
 	/*background:alpha(@fg_color, 0.1);*/
 	color:@fg_color;
@@ -1304,7 +1310,6 @@ GtkLevelBar.vertical {
 
 .level-bar.indicator-continuous.fill-block {
 
-
 }
 
 .level-bar.fill-block:backdrop,
@@ -1328,23 +1333,28 @@ GtkLevelBar.vertical {
    uncomment when :nth-child will be working
    on the widget
 
+
 .level-bar.indicator-discrete.fill-block.horizontal:first-child {
 	border-radius: 2px 0 0 2px;
+	background: #2CDEC6;
 }
 
 .level-bar.indicator-discrete.fill-block.horizontal:last-child {
 	border-radius: 0 2px 2px 0;
+	background: #2CDEC6;
 }
 
 .level-bar.indicator-discrete.fill-block.vertical:first-child {
 	border-radius: 2px 2px 0 0;
+	background: #2CDEC6;
 }
 
 .level-bar.indicator-discrete.fill-block.vertical:last-child {
 	border-radius: 0 0 2px 2px;
+	background: #2CDEC6;
 }
-
 */
+
 
 .level-bar.fill-block.level-high {
 	background:@selected_bg_color;
@@ -1352,18 +1362,25 @@ GtkLevelBar.vertical {
 	border-bottom:4px solid @bg_color;
 }
 
+.level-bar.fill-block.level-high:backdrop {
+	background:alpha(@fg_color,0.5);
+	border-top:4px solid @backdrop_bg_color;
+	border-bottom:4px solid @backdrop_bg_color;
+}
 .level-bar.fill-block.level-low {
-	background:#E938F1;
+	
 }
 
 .level-bar.fill-block.empty-fill-block {
-   background:alpha(@fg_color,0.1);
-	   border-top:4px solid @bg_color;
+  	background:alpha(@fg_color,0.1);
+	border-top:4px solid @bg_color;
 	border-bottom:4px solid @bg_color;
 }
 
 .level-bar.fill-block.empty-fill-block:backdrop {
-	
+	background:alpha(@fg_color,0.1);
+	border-top:4px solid @backdrop_bg_color;
+	border-bottom:4px solid @backdrop_bg_color;
 }
 
 GtkScale {
@@ -1610,6 +1627,11 @@ GtkMenuToolButton .menuitem.separator,
 GtkComboBox .menuitem.separator {
 
 }
+
+
+/*view*/
+ .view{background:@bg_color;}
+ .view:backdrop{background:@backdrop_bg_color;}
 
 /***********
  * sidebar *
@@ -2144,10 +2166,21 @@ GtkTreeView row:nth-child(even){
 	background-color:shade (@base_color, 0.965);
 }
 
-GtkTreeView row:nth-child(odd) {
-	/*background-color: shade (@base_color, 0.965);*/
+GtkTreeView row:nth-child(even):hover,
+GtkTreeView row:nth-child(odd):hover{
+	background-color:alpha(@selected_bg_color,0.2);
 }
 
+GtkTreeView row:nth-child(odd):backdrop{
+	background-color:@backdrop_bg_color;
+}
+GtkTreeView row:nth-child(even):backdrop{
+	background-color:shade (@backdrop_bg_color, 0.965);
+}
+GtkTreeView row:nth-child(even):backdrop:hover,
+GtkTreeView row:nth-child(odd):backdrop:hover{
+	background-color:alpha(@selected_bg_color,0.1);
+}
 /************
  * viewport *
  ************/
@@ -2170,3 +2203,5 @@ NautilusWindow *{   background-color: #484848;
     color: @fg_color;
     text-shadow: 0px 0px 1px @bg_color;
 }
+
+
