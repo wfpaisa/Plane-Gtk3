@@ -4,29 +4,11 @@
 
 style "ff-default" {
 	GtkCheckButton::indicator-size = 14
-	bg[NORMAL]        = "#676767"
-	bg[PRELIGHT]      = "#FFFFFF"
-	bg[SELECTED]      = "#FFFFFF"
-	bg[INSENSITIVE]   = "#FFFFFF"
-	bg[ACTIVE]        = "#FFFFFF"
-
-	fg[NORMAL]        = "#000000"
-	fg[PRELIGHT]      = "#000000"
-	fg[SELECTED]      = "#000000"
-	fg[INSENSITIVE]   = "#000000"
-	fg[ACTIVE]        = "#000000"
-
-	text[NORMAL]      = "#000000"
-	text[PRELIGHT]    = "#000000"
-	text[SELECTED]    = "#000000"
-	text[INSENSITIVE] = "#000000"
-	text[ACTIVE]      = "#000000"
-
-	base[NORMAL]      = "#676767"
-	base[PRELIGHT]    = "#FFFFFF"
-	base[SELECTED]    = "#FFFFFF"
-	base[INSENSITIVE] = "#FFFFFF"
-	base[ACTIVE]      = "#FFFFFF"
+	bg[NORMAL]        = '#404040'
+	bg[INSENSITIVE]   = '#DC1F1F'
+	fg[NORMAL]        = @bg_color
+	text[NORMAL]      = '#FFFFFF'
+	base[NORMAL]      = @base_color
 	engine "murrine" {
 		reliefstyle = 0
 	}
@@ -45,7 +27,7 @@ widget	"MozillaGtkWidget*"	style	"ff-default"
 #widget	"MozillaGtkWidget.GtkFixed.GtkHandleBox.GtkToolbar"	style	"theme-dark-toolbar"
 
 # Findbar entry, gecko (all html) entry
-widget	"MozillaGtkWidget.GtkFixed.GtkEntry"	style	"ff-default"
+#widget	"MozillaGtkWidget.GtkFixed.GtkEntry"	style	"theme-dark-entry"
 
 # ALL buttons
 #widget	"MozillaGtkWidget.GtkFixed.GtkButton"	style	"theme-dark-button"

@@ -925,12 +925,13 @@ GtkIconView.view.cell:selected:focused {
 }
 
 .rubberband {
-	background-color: alpha (@selected_bg_color, 0.35);
-	border-color: @selected_bg_color;
-	border-radius: 0;
-	border-style: solid;
-	border-width: 1px;
+    background-color: alpha (@selected_bg_color, 0.35);
+    border-color: @selected_bg_color;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px;
 }
+
 
 /*********
  * image *
@@ -1565,16 +1566,11 @@ GtkScrollbar:insensitive {
  *******************/
 .ubuntu-online-accounts.frame,
 GtkScrolledWindow.frame {
-	border-top-color: shade (@bg_color, 0.84);
-	border-right-color: shade (@bg_color, 0.76);
-	border-bottom-color: shade (@bg_color, 0.86);
-	border-left-color: shade (@bg_color, 0.76);
-	border-radius: 0;
-	border-style: solid;
+
 }
 
 .ubuntu-online-accounts.frame {
-	border-top-width: 0;
+	
 }
 
 /*************
@@ -1633,8 +1629,7 @@ GtkComboBox .menuitem.separator {
 
 
 /*view*/
- .view{background:@bg_color;}
- .view:backdrop{background:@backdrop_bg_color;}
+.view:backdrop{background-color:@backdrop_bg_color;}
 
 /***********
  * sidebar *
@@ -2195,23 +2190,14 @@ GtkViewport.frame:backdrop {
 }
 
 
-NautilusWindow GtkContainer{
-	
-}
-
 /***************
  * Resize grip *
  ***************/
-
 .grip {
     background-color: transparent;
     /*background-image: url("assets/resize-grip.svg");*/
 }
 
 
-.nautilus-desktop.nautilus-canvas-item{
-    color: @fg_color;
-    text-shadow: 0px 0px 1px @bg_color;
-}
 
 
