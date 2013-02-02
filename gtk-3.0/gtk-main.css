@@ -37,8 +37,6 @@
 @define-color backdrop_selected_bg_color shade (@bg_color, 0.92);
 @define-color backdrop_selected_fg_color @fg_color;
 
-@import url("gtk-widgets-borders.css");
-@import url("gtk-widgets-assets.css");
 @import url("gtk-widgets.css");
 @import url("apps/unity.css");
 @import url("apps/baobab.css");

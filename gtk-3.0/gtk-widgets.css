@@ -2198,10 +2198,17 @@ GtkViewport.frame:backdrop {
 NautilusWindow GtkContainer{
 	
 }
-/* darle bg al contenededor
-NautilusWindow *{   background-color: #484848; 
-    box-shadow: inset 0px 0px 48px 48px rgba(44, 44, 44, 0.28);}
-*/
+
+/***************
+ * Resize grip *
+ ***************/
+
+.grip {
+    background-color: transparent;
+    /*background-image: url("assets/resize-grip.svg");*/
+}
+
+
 .nautilus-desktop.nautilus-canvas-item{
     color: @fg_color;
     text-shadow: 0px 0px 1px @bg_color;
