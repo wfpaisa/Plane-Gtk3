@@ -465,14 +465,15 @@ GtkCheckButton:selected:focus {
 .check:inconsistent,
 .check:inconsistent:hover,
 .check:inconsistent:insensitive,
-.check:inconsistent:insensitive:active{
+.check:inconsistent:insensitive:active,
+.check row{
 	background-image:url("assets/transparent.png");
 	background-color:alpha(@fg_color,0.1);
 	background-position:left center;
 	background-repeat:no-repeat;
 	border:none;
 	box-shadow: 0 0 2px 3px alpha(#000000,0.5) inset,
-				0 0 0px 1px alpha(#FFFFFF,0.2) inset;
+				0 0 0px 1px alpha(#FFFFFF,0.15) inset;
 	margin: 1px 0;
 }
 .check:active,
@@ -526,8 +527,10 @@ GtkCheckButton:selected:focus {
 .radio:inconsistent,
 .radio:inconsistent:hover,
 .radio:inconsistent:insensitive,
-.radio:inconsistent:insensitive:active{
-	background:alpha(@fg_color,0.1) url("assets/transparent.png");
+.radio:inconsistent:insensitive:active,
+.radio row{
+	background-color:alpha(@fg_color,0.1);
+	background-image:url("assets/transparent.png");
 	background-position:center center;
 	background-repeat:no-repeat;    
 	border:none;
