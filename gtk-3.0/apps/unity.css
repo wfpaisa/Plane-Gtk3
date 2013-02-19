@@ -1,8 +1,7 @@
 UnityPanelWidget,
 .unity-panel{
-    background-image:@bg_color;
+    background-color:@bg_color;
     border:none;
-    border-image:none;
     color:mix (@fg_color, #000000, 0.05);
     text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
 }
