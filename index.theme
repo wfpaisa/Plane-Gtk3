@@ -1,12 +1,12 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Plane-Dark
-Comment=Ubuntu Plane-Dark theme
+Name=plane
+Comment=Ubuntu plane theme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Plane-Dark
-MetacityTheme=Plane-Dark
+GtkTheme=plane
+MetacityTheme=plane
 IconTheme=ubuntu-mono-dark
 CursorTheme=DMZ-White
 ButtonLayout=close,minimize,maximize:

@@ -1,8 +1,9 @@
 UnityPanelWidget,
-.unity-panel {
-    background:@dark_bg_color;
-    color:@dark_fg_color;
-    text-shadow: 0 -1px shade (#000000, 0.7);
+.unity-panel{
+    background-color:@bg_color;
+    border:none;
+    color:mix (@fg_color, #000000, 0.05);
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
 }
 
 .unity-panel.menubar,
@@ -11,8 +12,7 @@ UnityPanelWidget,
 
 .unity-panel.menuitem,
 .unity-panel .menuitem {
-   icon-shadow: 0 -1px shade (@dark_bg_color, 0.7);
-    background-color:transparent;
+     background-color:transparent;
      box-shadow:none;
      border:none;
 }
@@ -27,6 +27,8 @@ UnityPanelWidget,
     border-color:transparent;
     border-width:0px;
     border-bottom:2px solid @selected_bg_color;
+    color: shade (@dark_fg_color, 1.1);
+    text-shadow: 0 -1px shade (@dark_bg_color, 0.7);
     box-shadow:none;
     transition: 150ms ease-in-out;
 }
