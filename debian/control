@@ -1,0 +1,17 @@
+Source: planegtktheme
+Section: misc
+Priority: optional
+Build-Depends: cdbs (>= 0.4.49), debhelper (>= 8), python (>= 2.4), python-support
+XS-Python-Version: >= 2.4
+Maintainer: Christian Rupp <Christian@r-k-r.de>
+Standards-Version: 3.9.2
+Homepage: http://gnome-look.org/content/show.php/Plane-Gtk3.6?content=156309
+
+Version: 4.1.0
+Package: planegtktheme
+Depends: 
+Suggests:
+Architecture: all
+Description: A theme for Gtk3
+	Plane GTK3 design is based on a clean, serious and elegant for all those lovers of minimalist graphical environments.
+	Based on the Android Stencil and an extensive research on GUI-GUI was redesigned Ubuntu "Ambience" resulting Elegant Theme and adapting to all kinds of users.
